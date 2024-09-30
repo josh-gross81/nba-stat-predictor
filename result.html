@@ -8,38 +8,46 @@
         body {
             font-family: Arial, sans-serif;
             margin: 50px;
-        }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
+            text-align: center;
         }
         h1 {
-            text-align: center;
+            font-size: 36px;
         }
         .stats {
             font-size: 18px;
         }
+        a {
+            display: inline-block;
+            padding: 12px 24px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        a:hover {
+            background-color: #45a049;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>{{ player.Name }} - Projected Stats</h1>
-        <div class="stats">
-            <h3>Projected Stats:</h3>
-            <p><strong>Points Per Game (PPG):</strong> {{ player.Prediction['Points'] }}</p>
-            <p><strong>Rebounds:</strong> {{ player.Prediction['Rebounds'] }}</p>
-            <p><strong>Assists:</strong> {{ player.Prediction['Assists'] }}</p>
-            <p><strong>Steals:</strong> {{ player.Prediction['Steals'] }}</p>
-            <p><strong>3P%:</strong> {{ player.Prediction['3P%'] }}</p>
+    <h1>{{ player.Name }} - Projected Stats</h1>
+    <div class="stats">
+        <h3>Projected Stats:</h3>
+        <p><strong>Points Per Game (PPG):</strong> {{ player.Prediction['Points'] }}</p>
+        <p><strong>Rebounds:</strong> {{ player.Prediction['Rebounds'] }}</p>
+        <p><strong>Assists:</strong> {{ player.Prediction['Assists'] }}</p>
+        <p><strong>Steals:</strong> {{ player.Prediction['Steals'] }}</p>
+        <p><strong>3P%:</strong> {{ player.Prediction['3P%'] }}</p>
 
-            <h3>Percentiles (Relative to Other Players):</h3>
-            <ul>
-                {% for feature, percentile in player.Percentiles.items() %}
-                    <li><strong>{{ feature }}:</strong> {{ percentile }}%</li>
-                {% endfor %}
-            </ul>
-        </div>
-        <a href="/">Search Another Player</a>
+        <h3>Percentiles (Relative to Other Players):</h3>
+        <ul>
+            {% for feature, percentile in player.Percentiles.items() %}
+                <li><strong>{{ feature }}:</strong> {{ percentile }}%</li>
+            {% endfor %}
+        </ul>
     </div>
+    <a href="{{ url_for('home') }}">Search Another Player</a>  <!-- Link back to lookup page -->
 </body>
 </html>
