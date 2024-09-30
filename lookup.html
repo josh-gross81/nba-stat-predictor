@@ -42,10 +42,9 @@
 </head>
 <body>
     <h1>NBA Player Lookup</h1>
-    {% if error %}
-        <p class="error">{{ error }}</p>
-    {% endif %}
-    <form action="{{ url_for('player_lookup') }}" method="post">
+    <p>This is a static site. No real lookup will happen here.</p>
+    <!-- Placeholder form for the player name -->
+    <form action="result.html" method="get">
         <input type="text" name="player_name" placeholder="Enter Player Name" required>
         <button type="submit">Search Player</button>
     </form>
