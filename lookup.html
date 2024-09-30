@@ -8,47 +8,46 @@
         body {
             font-family: Arial, sans-serif;
             margin: 50px;
-        }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
+            text-align: center;
         }
         h1 {
-            text-align: center;
+            font-size: 36px;
         }
         form {
             display: flex;
             flex-direction: column;
+            align-items: center;
         }
         input {
-            margin-bottom: 15px;
             padding: 10px;
-            font-size: 16px;
+            font-size: 18px;
+            margin-bottom: 20px;
+            width: 50%;
         }
         button {
-            padding: 10px;
-            font-size: 16px;
+            padding: 10px 20px;
+            font-size: 18px;
             background-color: #4CAF50;
             color: white;
             border: none;
             cursor: pointer;
         }
+        button:hover {
+            background-color: #45a049;
+        }
         .error {
             color: red;
-            text-align: center;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>NBA Player Lookup</h1>
-        {% if error %}
-            <p class="error">{{ error }}</p>
-        {% endif %}
-        <form action="/player" method="post">
-            <label>Enter Player Name: <input type="text" name="player_name" required></label>
-            <button type="submit">Search Player</button>
-        </form>
-    </div>
+    <h1>NBA Player Lookup</h1>
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+    <form action="{{ url_for('player_lookup') }}" method="post">
+        <input type="text" name="player_name" placeholder="Enter Player Name" required>
+        <button type="submit">Search Player</button>
+    </form>
 </body>
 </html>
