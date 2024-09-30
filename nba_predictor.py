@@ -22,10 +22,15 @@ feature_columns = ['Age', 'DARKO', 'DRIP', 'SQ', 'FG3_PCT', 'FT_PCT', 'BPM', 'Wi
 # Define target columns for the projections
 target_columns = ['PTS', 'REB', 'AST', 'STL', '3P%']
 
-# Home route for player lookup
+# Intro route (new) to display the intro screen
 @app.route('/')
+def intro():
+    return render_template('intro.html')  # This is the new intro page
+
+# Route for the player lookup page
+@app.route('/lookup')
 def home():
-    return render_template('lookup.html')  # Create a lookup form in the front-end
+    return render_template('lookup.html')  # The player lookup page
 
 # Route to handle player lookup and display projections with percentiles
 @app.route('/player', methods=['POST'])
