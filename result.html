@@ -1,0 +1,437 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA Player Stats</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 36px;
+        }
+        .stats {
+            font-size: 18px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        a {
+            display: inline-block;
+            padding: 12px 24px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        a:hover {
+            background-color: #45a049;
+        }
+        #searchInput {
+            padding: 10px;
+            font-size: 18px;
+            width: 50%;
+            margin-bottom: 20px;
+        }
+    </style>
+    <script>
+        function searchTable() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("predictionsTable");
+            tr = table.getElementsByTagName("tr");
+
+            for (i = 1; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>NBA Player Stats Predictor</h1>
+    <input type="text" id="searchInput" onkeyup="searchTable()" placeholder="Search for players..">
+    <table id="predictionsTable">
+        <thead>
+            <tr>
+                <th>Player</th>
+                <th>PTS</th>
+                <th>REB</th>
+                <th>AST</th>
+                <th>STL</th>
+                <th>3P%</th>
+            </tr>
+        </thead>
+        <tbody>
+<tr><td>DeMar DeRozanSAC | SF</td><td>19.37</td><td>5.45</td><td>4.83</td><td>1.06</td><td>1.75</td></tr>
+<tr><td>Domantas SabonisSAC | C</td><td>17.33</td><td>8.24</td><td>6.12</td><td>1.08</td><td>0.70</td></tr>
+<tr><td>Coby WhiteCHI | PG</td><td>15.84</td><td>3.35</td><td>4.24</td><td>0.89</td><td>2.18</td></tr>
+<tr><td>Mikal BridgesNYK | SF</td><td>17.78</td><td>5.35</td><td>3.53</td><td>0.92</td><td>2.08</td></tr>
+<tr><td>Paolo BancheroORL | PF</td><td>19.38</td><td>5.90</td><td>4.58</td><td>0.94</td><td>1.46</td></tr>
+<tr><td>Kevin DurantPHX | PF</td><td>23.34</td><td>6.14</td><td>4.53</td><td>1.03</td><td>2.22</td></tr>
+<tr><td>Dejounte MurrayNOP | PG</td><td>20.84</td><td>5.27</td><td>6.07</td><td>1.22</td><td>1.82</td></tr>
+<tr><td>Anthony EdwardsMIN | SG</td><td>26.25</td><td>6.66</td><td>5.01</td><td>1.30</td><td>2.62</td></tr>
+<tr><td>Nikola JokicDEN | C</td><td>28.38</td><td>10.32</td><td>9.09</td><td>1.60</td><td>1.70</td></tr>
+<tr><td>Jalen BrunsonNYK | PG</td><td>26.98</td><td>5.47</td><td>7.60</td><td>1.37</td><td>2.72</td></tr>
+<tr><td>Josh HartNYK | SF</td><td>8.17</td><td>4.26</td><td>3.12</td><td>1.01</td><td>0.89</td></tr>
+<tr><td>Anthony DavisLAL | C</td><td>21.19</td><td>9.60</td><td>2.90</td><td>1.12</td><td>1.12</td></tr>
+<tr><td>Fred VanVleetHOU | PG</td><td>16.44</td><td>3.59</td><td>6.42</td><td>1.25</td><td>2.56</td></tr>
+<tr><td>De'Aaron FoxSAC | PG</td><td>25.34</td><td>5.76</td><td>5.74</td><td>1.43</td><td>2.44</td></tr>
+<tr><td>Pascal SiakamIND | PF</td><td>19.12</td><td>7.33</td><td>4.33</td><td>1.00</td><td>1.24</td></tr>
+<tr><td>Jayson TatumBOS | SF</td><td>25.93</td><td>6.84</td><td>4.99</td><td>1.34</td><td>2.88</td></tr>
+<tr><td>Austin ReavesLAL | SG</td><td>16.18</td><td>4.57</td><td>4.83</td><td>0.95</td><td>2.08</td></tr>
+<tr><td>Tyrese MaxeyPHI | PG</td><td>22.23</td><td>4.95</td><td>5.77</td><td>1.20</td><td>2.46</td></tr>
+<tr><td>Luka DoncicDAL | SF</td><td>34.56</td><td>9.33</td><td>9.91</td><td>1.69</td><td>3.19</td></tr>
+<tr><td>Nikola VucevicCHI | C</td><td>13.90</td><td>7.22</td><td>3.01</td><td>0.70</td><td>0.50</td></tr>
+<tr><td>Jalen GreenHOU | SG</td><td>17.41</td><td>4.18</td><td>3.03</td><td>0.86</td><td>2.06</td></tr>
+<tr><td>Rudy GobertMIN | C</td><td>13.12</td><td>9.47</td><td>1.59</td><td>0.96</td><td>0.02</td></tr>
+<tr><td>Keegan MurraySAC | PF</td><td>12.73</td><td>5.71</td><td>1.67</td><td>0.86</td><td>1.60</td></tr>
+<tr><td>Miles BridgesCHA | SF</td><td>15.96</td><td>5.31</td><td>2.55</td><td>0.77</td><td>1.65</td></tr>
+<tr><td>Damian LillardMIL | PG</td><td>24.32</td><td>4.25</td><td>6.51</td><td>1.24</td><td>3.19</td></tr>
+<tr><td>Giannis AntetokounmpoMIL | PF</td><td>27.95</td><td>10.50</td><td>5.78</td><td>1.48</td><td>1.31</td></tr>
+<tr><td>Michael Porter Jr.DEN | PF</td><td>16.68</td><td>5.35</td><td>1.89</td><td>1.00</td><td>2.08</td></tr>
+<tr><td>Shai Gilgeous-AlexanderOKC | PG</td><td>30.03</td><td>8.93</td><td>6.78</td><td>1.52</td><td>2.35</td></tr>
+<tr><td>Grayson AllenPHX | SG</td><td>12.42</td><td>3.46</td><td>2.45</td><td>0.78</td><td>2.54</td></tr>
+<tr><td>LeBron JamesLAL | PF</td><td>24.19</td><td>6.32</td><td>7.65</td><td>1.20</td><td>1.97</td></tr>
+<tr><td>Paul GeorgePHI | SF</td><td>23.33</td><td>6.41</td><td>3.95</td><td>1.21</td><td>2.81</td></tr>
+<tr><td>Dennis SchroderBKN | PG</td><td>12.14</td><td>1.95</td><td>5.42</td><td>0.76</td><td>1.57</td></tr>
+<tr><td>D'Angelo RussellLAL | PG</td><td>18.96</td><td>4.32</td><td>6.03</td><td>1.07</td><td>2.38</td></tr>
+<tr><td>James HardenLAC | SG</td><td>18.61</td><td>4.00</td><td>7.54</td><td>1.19</td><td>2.71</td></tr>
+<tr><td>Devin BookerPHX | SG</td><td>24.97</td><td>4.99</td><td>6.77</td><td>1.21</td><td>2.69</td></tr>
+<tr><td>Jarrett AllenCLE | C</td><td>14.06</td><td>9.42</td><td>2.20</td><td>0.78</td><td>0.30</td></tr>
+<tr><td>Jabari Smith Jr.HOU | PF</td><td>10.20</td><td>5.13</td><td>1.12</td><td>0.66</td><td>1.22</td></tr>
+<tr><td>Stephen CurryGSW | PG</td><td>27.54</td><td>5.03</td><td>5.74</td><td>1.30</td><td>3.70</td></tr>
+<tr><td>Bam AdebayoMIA | C</td><td>18.31</td><td>8.31</td><td>3.32</td><td>1.13</td><td>0.80</td></tr>
+<tr><td>Brook LopezMIL | C</td><td>12.01</td><td>5.63</td><td>1.46</td><td>0.87</td><td>1.32</td></tr>
+<tr><td>Kentavious Caldwell-PopeORL | SG</td><td>9.41</td><td>2.91</td><td>2.02</td><td>0.85</td><td>1.84</td></tr>
+<tr><td>Bogdan BogdanovicATL | SG</td><td>16.90</td><td>4.79</td><td>3.32</td><td>0.96</td><td>2.28</td></tr>
+<tr><td>Harrison BarnesSAS | PF</td><td>10.20</td><td>3.98</td><td>1.24</td><td>0.65</td><td>1.69</td></tr>
+<tr><td>Derrick WhiteBOS | SG</td><td>16.50</td><td>5.38</td><td>4.88</td><td>1.16</td><td>2.23</td></tr>
+<tr><td>Tobias HarrisDET | PF</td><td>14.10</td><td>5.20</td><td>2.71</td><td>0.86</td><td>1.32</td></tr>
+<tr><td>Donte DiVincenzoNYK | SG</td><td>17.15</td><td>5.39</td><td>3.13</td><td>1.16</td><td>2.42</td></tr>
+<tr><td>Jordan PooleWAS | SG</td><td>16.39</td><td>3.54</td><td>3.80</td><td>0.67</td><td>2.13</td></tr>
+<tr><td>Jaylen BrownBOS | SF</td><td>19.55</td><td>5.27</td><td>3.40</td><td>0.94</td><td>1.77</td></tr>
+<tr><td>Malik BeasleyDET | SG</td><td>8.17</td><td>1.84</td><td>0.74</td><td>0.66</td><td>2.15</td></tr>
+<tr><td>Franz WagnerORL | SF</td><td>19.73</td><td>6.76</td><td>3.76</td><td>1.04</td><td>1.79</td></tr>
+<tr><td>Kawhi LeonardLAC | SF</td><td>25.43</td><td>8.48</td><td>4.37</td><td>1.39</td><td>2.41</td></tr>
+<tr><td>Herbert JonesNOP | SF</td><td>11.71</td><td>5.39</td><td>2.43</td><td>0.83</td><td>1.75</td></tr>
+<tr><td>Aaron GordonDEN | PF</td><td>12.95</td><td>6.24</td><td>3.38</td><td>1.03</td><td>0.76</td></tr>
+<tr><td>Klay ThompsonDAL | SG</td><td>16.22</td><td>4.10</td><td>2.24</td><td>0.70</td><td>2.34</td></tr>
+<tr><td>Kyle KuzmaWAS | PF</td><td>17.43</td><td>5.06</td><td>3.32</td><td>0.64</td><td>1.57</td></tr>
+<tr><td>Jrue HolidayBOS | PG</td><td>12.24</td><td>4.58</td><td>4.03</td><td>0.95</td><td>1.64</td></tr>
+<tr><td>Deni AvdijaPOR | SF</td><td>12.18</td><td>4.78</td><td>3.04</td><td>0.67</td><td>1.29</td></tr>
+<tr><td>Devin VassellSAS | SG</td><td>17.06</td><td>5.64</td><td>3.85</td><td>0.85</td><td>1.90</td></tr>
+<tr><td>Luguentz DortOKC | SG</td><td>9.78</td><td>3.22</td><td>1.05</td><td>0.73</td><td>1.90</td></tr>
+<tr><td>Max StrusCLE | SG</td><td>11.16</td><td>3.86</td><td>3.18</td><td>0.84</td><td>1.86</td></tr>
+<tr><td>Dillon BrooksHOU | SF</td><td>9.51</td><td>2.85</td><td>1.22</td><td>0.66</td><td>1.68</td></tr>
+<tr><td>Tyrese HaliburtonIND | PG</td><td>22.67</td><td>5.40</td><td>10.46</td><td>1.35</td><td>2.45</td></tr>
+<tr><td>Jalen WilliamsOKC | SG</td><td>19.20</td><td>6.80</td><td>4.80</td><td>0.92</td><td>1.75</td></tr>
+<tr><td>Jaden IveyDET | SG</td><td>13.86</td><td>2.86</td><td>3.35</td><td>0.70</td><td>1.47</td></tr>
+<tr><td>Ayo DosunmuCHI | SG</td><td>10.76</td><td>3.62</td><td>3.03</td><td>0.71</td><td>1.20</td></tr>
+<tr><td>Zion WilliamsonNOP | PF</td><td>20.29</td><td>7.17</td><td>3.74</td><td>1.08</td><td>0.83</td></tr>
+<tr><td>Mike ConleyMIN | PG</td><td>14.75</td><td>3.87</td><td>6.10</td><td>1.08</td><td>2.36</td></tr>
+<tr><td>Jeremy SochanSAS | PF</td><td>9.52</td><td>4.38</td><td>2.68</td><td>0.70</td><td>0.66</td></tr>
+<tr><td>Buddy HieldGSW | SG</td><td>11.28</td><td>3.32</td><td>2.45</td><td>0.62</td><td>1.90</td></tr>
+<tr><td>CJ McCollumNOP | SG</td><td>18.79</td><td>4.40</td><td>4.51</td><td>1.03</td><td>2.40</td></tr>
+<tr><td>Spencer DinwiddieDAL | PG</td><td>7.50</td><td>1.27</td><td>3.85</td><td>0.66</td><td>1.55</td></tr>
+<tr><td>Tre JonesSAS | PG</td><td>12.30</td><td>4.16</td><td>6.12</td><td>1.07</td><td>1.24</td></tr>
+<tr><td>Grant WilliamsCHA | PF</td><td>7.72</td><td>3.59</td><td>1.66</td><td>0.47</td><td>1.45</td></tr>
+<tr><td>Jaren Jackson Jr.MEM | PF</td><td>21.43</td><td>7.20</td><td>2.42</td><td>0.93</td><td>1.92</td></tr>
+<tr><td>Tim Hardaway Jr.DET | SG</td><td>11.00</td><td>2.17</td><td>1.28</td><td>0.52</td><td>1.90</td></tr>
+<tr><td>Taurean PrinceMIL | SF</td><td>3.83</td><td>1.87</td><td>0.38</td><td>0.29</td><td>1.27</td></tr>
+<tr><td>Jaden McDanielsMIN | SF</td><td>9.68</td><td>4.89</td><td>1.30</td><td>0.77</td><td>1.08</td></tr>
+<tr><td>Brandon IngramNOP | SF</td><td>19.69</td><td>5.51</td><td>5.50</td><td>0.96</td><td>1.58</td></tr>
+<tr><td>Scottie BarnesTOR | SF</td><td>17.13</td><td>7.38</td><td>4.89</td><td>0.94</td><td>1.17</td></tr>
+<tr><td>Jusuf NurkicPHX | C</td><td>11.86</td><td>6.68</td><td>3.41</td><td>1.01</td><td>0.36</td></tr>
+<tr><td>Myles TurnerIND | C</td><td>18.29</td><td>7.81</td><td>1.93</td><td>0.89</td><td>1.64</td></tr>
+<tr><td>Collin SextonUTA | PG</td><td>19.36</td><td>3.21</td><td>5.79</td><td>0.83</td><td>2.22</td></tr>
+<tr><td>Cam ThomasBKN | SG</td><td>19.54</td><td>4.40</td><td>3.10</td><td>0.80</td><td>2.09</td></tr>
+<tr><td>Cade CunninghamDET | SG</td><td>18.93</td><td>3.84</td><td>6.39</td><td>0.65</td><td>1.71</td></tr>
+<tr><td>Corey KispertWAS | SF</td><td>12.76</td><td>3.58</td><td>1.91</td><td>0.62</td><td>2.15</td></tr>
+<tr><td>Saddiq BeyWAS | SF</td><td>11.57</td><td>4.33</td><td>1.38</td><td>0.86</td><td>1.81</td></tr>
+<tr><td>Kelly Oubre Jr.PHI | SF</td><td>13.10</td><td>4.68</td><td>1.46</td><td>0.77</td><td>1.18</td></tr>
+<tr><td>Alperen SengunHOU | C</td><td>18.78</td><td>8.66</td><td>4.29</td><td>1.03</td><td>0.79</td></tr>
+<tr><td>Jimmy ButlerMIA | SF</td><td>23.27</td><td>6.98</td><td>5.53</td><td>1.43</td><td>2.50</td></tr>
+<tr><td>Terry RozierMIA | PG</td><td>18.48</td><td>4.82</td><td>5.23</td><td>0.95</td><td>1.97</td></tr>
+<tr><td>Alex CarusoOKC | PG</td><td>12.84</td><td>5.08</td><td>3.47</td><td>1.13</td><td>1.95</td></tr>
+<tr><td>Keldon JohnsonSAS | SF</td><td>10.35</td><td>2.96</td><td>1.95</td><td>0.48</td><td>1.29</td></tr>
+<tr><td>Kyrie IrvingDAL | PG</td><td>24.56</td><td>5.77</td><td>5.21</td><td>1.34</td><td>2.74</td></tr>
+<tr><td>Karl-Anthony TownsMIN | C</td><td>21.34</td><td>6.89</td><td>2.91</td><td>0.88</td><td>2.29</td></tr>
+<tr><td>Jalen SuggsORL | PG</td><td>16.51</td><td>4.70</td><td>3.20</td><td>1.21</td><td>2.09</td></tr>
+<tr><td>Josh GiddeyCHI | SF</td><td>14.33</td><td>4.91</td><td>4.75</td><td>0.92</td><td>0.98</td></tr>
+<tr><td>Bobby PortisMIL | PF</td><td>12.63</td><td>5.45</td><td>1.11</td><td>0.51</td><td>1.01</td></tr>
+<tr><td>Aaron NesmithIND | SF</td><td>11.36</td><td>4.16</td><td>1.45</td><td>0.75</td><td>1.79</td></tr>
+<tr><td>Gary Trent Jr.MIL | SG</td><td>13.78</td><td>3.82</td><td>2.07</td><td>0.87</td><td>2.14</td></tr>
+<tr><td>Norman PowellLAC | SG</td><td>11.56</td><td>2.82</td><td>0.77</td><td>0.53</td><td>1.85</td></tr>
+<tr><td>Immanuel QuickleyTOR | PG</td><td>19.97</td><td>5.07</td><td>5.82</td><td>1.09</td><td>2.69</td></tr>
+<tr><td>Naz ReidMIN | C</td><td>14.93</td><td>6.49</td><td>1.32</td><td>0.72</td><td>1.52</td></tr>
+<tr><td>Caris LeVertCLE | SF</td><td>13.67</td><td>4.16</td><td>4.74</td><td>0.87</td><td>1.33</td></tr>
+<tr><td>Royce O'NealePHX | SF</td><td>4.81</td><td>2.15</td><td>1.99</td><td>0.61</td><td>1.41</td></tr>
+<tr><td>Jonathan KumingaGSW | SF</td><td>15.74</td><td>5.69</td><td>2.49</td><td>0.79</td><td>1.16</td></tr>
+<tr><td>Trae YoungATL | PG</td><td>25.07</td><td>2.99</td><td>9.85</td><td>1.17</td><td>3.25</td></tr>
+<tr><td>Donovan MitchellCLE | SG</td><td>28.51</td><td>6.98</td><td>6.29</td><td>1.53</td><td>3.01</td></tr>
+<tr><td>Dorian Finney-SmithBKN | SF</td><td>7.27</td><td>3.62</td><td>1.35</td><td>0.80</td><td>1.30</td></tr>
+<tr><td>Tyus JonesPHX | PG</td><td>13.08</td><td>3.67</td><td>7.14</td><td>1.05</td><td>1.46</td></tr>
+<tr><td>Jonas Valanciunas| C</td><td>14.10</td><td>7.61</td><td>2.59</td><td>0.68</td><td>0.70</td></tr>
+<tr><td>Nickeil Alexander-WalkerMIN | SG</td><td>6.61</td><td>2.56</td><td>1.94</td><td>0.62</td><td>1.27</td></tr>
+<tr><td>Andrew WigginsGSW | SF</td><td>13.03</td><td>4.22</td><td>1.96</td><td>0.85</td><td>1.33</td></tr>
+<tr><td>John CollinsUTA | PF</td><td>13.89</td><td>5.44</td><td>1.31</td><td>0.70</td><td>1.36</td></tr>
+<tr><td>Darius GarlandCLE | PG</td><td>19.96</td><td>3.32</td><td>6.07</td><td>1.11</td><td>2.59</td></tr>
+<tr><td>Isaiah HartensteinOKC | C</td><td>9.86</td><td>8.00</td><td>2.53</td><td>0.94</td><td>0.04</td></tr>
+<tr><td>Eric GordonPHI | SG</td><td>7.21</td><td>1.80</td><td>1.21</td><td>0.49</td><td>1.52</td></tr>
+<tr><td>Jalen JohnsonATL | PF</td><td>12.48</td><td>6.30</td><td>3.04</td><td>0.85</td><td>0.84</td></tr>
+<tr><td>Isaac OkoroCLE | SF</td><td>7.42</td><td>3.37</td><td>1.58</td><td>0.71</td><td>1.20</td></tr>
+<tr><td>Clint CapelaATL | C</td><td>8.73</td><td>7.55</td><td>1.26</td><td>0.72</td><td>-0.39</td></tr>
+<tr><td>Terance MannLAC | SF</td><td>8.79</td><td>4.10</td><td>1.67</td><td>0.69</td><td>1.25</td></tr>
+<tr><td>Malik MonkSAC | SG</td><td>14.56</td><td>2.12</td><td>5.08</td><td>0.65</td><td>1.84</td></tr>
+<tr><td>Bruce BrownTOR | SG</td><td>7.11</td><td>2.85</td><td>2.23</td><td>0.50</td><td>0.76</td></tr>
+<tr><td>Jamal MurrayDEN | PG</td><td>23.02</td><td>5.13</td><td>7.23</td><td>1.18</td><td>2.54</td></tr>
+<tr><td>RJ BarrettTOR | SF</td><td>15.03</td><td>4.23</td><td>2.95</td><td>0.60</td><td>1.32</td></tr>
+<tr><td>Georges NiangCLE | PF</td><td>8.39</td><td>2.45</td><td>0.78</td><td>0.39</td><td>1.72</td></tr>
+<tr><td>Jerami GrantPOR | PF</td><td>16.09</td><td>5.56</td><td>2.66</td><td>0.66</td><td>1.55</td></tr>
+<tr><td>Rui HachimuraLAL | PF</td><td>10.99</td><td>4.94</td><td>1.04</td><td>0.54</td><td>1.17</td></tr>
+<tr><td>Payton PritchardBOS | PG</td><td>11.06</td><td>2.73</td><td>4.03</td><td>0.76</td><td>2.03</td></tr>
+<tr><td>Lauri MarkkanenUTA | PF</td><td>22.04</td><td>6.99</td><td>2.65</td><td>1.16</td><td>2.62</td></tr>
+<tr><td>Reggie JacksonPHI | PG</td><td>10.43</td><td>2.08</td><td>4.48</td><td>0.51</td><td>1.15</td></tr>
+<tr><td>Cole AnthonyORL | PG</td><td>13.74</td><td>2.64</td><td>3.01</td><td>0.82</td><td>1.66</td></tr>
+<tr><td>Daniel GaffordDAL | C</td><td>10.15</td><td>9.08</td><td>1.59</td><td>0.62</td><td>-0.33</td></tr>
+<tr><td>Ivica ZubacLAC | C</td><td>10.35</td><td>7.86</td><td>1.27</td><td>0.58</td><td>0.09</td></tr>
+<tr><td>Deandre AytonPOR | C</td><td>11.10</td><td>7.20</td><td>0.93</td><td>0.52</td><td>-0.02</td></tr>
+<tr><td>Derrick Jones Jr.LAC | PF</td><td>9.93</td><td>4.53</td><td>1.16</td><td>0.86</td><td>1.16</td></tr>
+<tr><td>Kyle AndersonGSW | PF</td><td>5.64</td><td>5.42</td><td>3.86</td><td>0.79</td><td>-0.14</td></tr>
+<tr><td>Jalen DurenDET | C</td><td>11.69</td><td>7.79</td><td>1.70</td><td>0.49</td><td>0.35</td></tr>
+<tr><td>Bradley BealPHX | SG</td><td>17.12</td><td>4.23</td><td>4.59</td><td>0.88</td><td>1.95</td></tr>
+<tr><td>Nick RichardsCHA | C</td><td>9.22</td><td>5.94</td><td>0.93</td><td>0.46</td><td>0.34</td></tr>
+<tr><td>Kelly OlynykTOR | C</td><td>13.98</td><td>5.58</td><td>5.49</td><td>0.73</td><td>1.51</td></tr>
+<tr><td>Caleb MartinPHI | SF</td><td>9.10</td><td>3.57</td><td>1.86</td><td>0.78</td><td>1.07</td></tr>
+<tr><td>Sam HauserBOS | PF</td><td>9.25</td><td>3.08</td><td>0.72</td><td>0.60</td><td>2.13</td></tr>
+<tr><td>Al HorfordBOS | C</td><td>7.35</td><td>5.04</td><td>2.15</td><td>0.65</td><td>0.97</td></tr>
+<tr><td>Obi ToppinIND | PF</td><td>10.36</td><td>4.55</td><td>1.61</td><td>0.55</td><td>1.03</td></tr>
+<tr><td>OG AnunobyNYK | SF</td><td>12.88</td><td>5.06</td><td>1.96</td><td>0.92</td><td>1.52</td></tr>
+<tr><td>Jabari WalkerPOR | PF</td><td>7.84</td><td>4.34</td><td>1.13</td><td>0.65</td><td>0.61</td></tr>
+<tr><td>Andrew NembhardIND | PG</td><td>9.87</td><td>3.42</td><td>4.19</td><td>0.78</td><td>1.02</td></tr>
+<tr><td>Trey Murphy IIINOP | SF</td><td>15.76</td><td>6.11</td><td>2.49</td><td>1.00</td><td>2.45</td></tr>
+<tr><td>Kyle LowryPHI | PG</td><td>8.85</td><td>2.11</td><td>3.76</td><td>0.83</td><td>2.06</td></tr>
+<tr><td>Kristaps PorzingisBOS | C</td><td>22.02</td><td>8.73</td><td>2.74</td><td>1.11</td><td>2.10</td></tr>
+<tr><td>Jordan ClarksonUTA | SG</td><td>14.20</td><td>1.35</td><td>4.32</td><td>0.61</td><td>1.69</td></tr>
+<tr><td>De'Andre HunterATL | SF</td><td>13.15</td><td>3.89</td><td>1.55</td><td>0.63</td><td>1.79</td></tr>
+<tr><td>Pat ConnaughtonMIL | SG</td><td>2.93</td><td>1.84</td><td>1.48</td><td>0.50</td><td>1.13</td></tr>
+<tr><td>Christian BraunDEN | SF</td><td>6.16</td><td>2.81</td><td>1.63</td><td>0.59</td><td>0.87</td></tr>
+<tr><td>Ochai AgbajiTOR | SG</td><td>3.31</td><td>3.11</td><td>0.77</td><td>0.61</td><td>0.32</td></tr>
+<tr><td>Julius RandleNYK | PF</td><td>20.03</td><td>5.40</td><td>4.40</td><td>0.96</td><td>1.60</td></tr>
+<tr><td>Precious AchiuwaNYK | PF</td><td>4.79</td><td>4.83</td><td>0.95</td><td>0.57</td><td>-0.27</td></tr>
+<tr><td>Santi AldamaMEM | PF</td><td>8.67</td><td>5.09</td><td>2.01</td><td>0.74</td><td>0.90</td></tr>
+<tr><td>Cameron JohnsonBKN | PF</td><td>13.35</td><td>4.19</td><td>2.53</td><td>0.83</td><td>2.04</td></tr>
+<tr><td>Malaki BranhamSAS | SG</td><td>7.85</td><td>2.11</td><td>1.90</td><td>0.32</td><td>1.03</td></tr>
+<tr><td>Paul ReedDET | PF</td><td>9.28</td><td>5.39</td><td>1.62</td><td>0.84</td><td>0.27</td></tr>
+<tr><td>Anfernee SimonsPOR | PG</td><td>20.08</td><td>4.01</td><td>5.36</td><td>0.82</td><td>2.48</td></tr>
+<tr><td>Kevin HuerterSAC | SG</td><td>11.95</td><td>3.94</td><td>3.06</td><td>0.92</td><td>1.84</td></tr>
+<tr><td>Bennedict MathurinIND | SG</td><td>11.26</td><td>2.66</td><td>1.47</td><td>0.39</td><td>1.50</td></tr>
+<tr><td>Evan MobleyCLE | PF</td><td>15.17</td><td>7.94</td><td>3.05</td><td>0.93</td><td>0.53</td></tr>
+<tr><td>Chris PaulSAS | PG</td><td>11.42</td><td>3.01</td><td>6.99</td><td>1.08</td><td>1.55</td></tr>
+<tr><td>Russell WestbrookDEN | PG</td><td>11.62</td><td>3.35</td><td>4.42</td><td>0.69</td><td>0.67</td></tr>
+<tr><td>Nicolas BatumLAC | SF</td><td>3.54</td><td>3.14</td><td>1.57</td><td>0.56</td><td>1.26</td></tr>
+<tr><td>Zach CollinsSAS | C</td><td>11.90</td><td>4.28</td><td>2.84</td><td>0.52</td><td>0.92</td></tr>
+<tr><td>Josh GreenCHA | SG</td><td>5.85</td><td>2.71</td><td>1.71</td><td>0.58</td><td>1.10</td></tr>
+<tr><td>Walker KesslerUTA | C</td><td>6.01</td><td>6.73</td><td>0.66</td><td>0.58</td><td>-0.60</td></tr>
+<tr><td>Draymond GreenGSW | PF</td><td>10.56</td><td>4.98</td><td>5.60</td><td>0.94</td><td>0.89</td></tr>
+<tr><td>Peyton WatsonDEN | SF</td><td>4.90</td><td>4.01</td><td>0.87</td><td>0.51</td><td>0.10</td></tr>
+<tr><td>Matisse ThybullePOR | SF</td><td>4.71</td><td>3.91</td><td>1.05</td><td>0.86</td><td>0.87</td></tr>
+<tr><td>Khris MiddletonMIL | SF</td><td>17.44</td><td>4.34</td><td>5.56</td><td>0.84</td><td>1.99</td></tr>
+<tr><td>Julian ChampagnieSAS | SF</td><td>6.89</td><td>3.24</td><td>1.18</td><td>0.56</td><td>1.65</td></tr>
+<tr><td>Patrick BeverleyMIL | PG</td><td>8.07</td><td>3.48</td><td>3.57</td><td>0.77</td><td>1.23</td></tr>
+<tr><td>Amir CoffeyLAC | SF</td><td>3.52</td><td>2.04</td><td>0.43</td><td>0.26</td><td>1.22</td></tr>
+<tr><td>Isaiah JoeOKC | SG</td><td>9.52</td><td>2.76</td><td>1.06</td><td>0.59</td><td>2.05</td></tr>
+<tr><td>Desmond BaneMEM | SG</td><td>22.14</td><td>4.71</td><td>5.15</td><td>1.06</td><td>2.76</td></tr>
+<tr><td>Vince Williams Jr.MEM | SG</td><td>11.19</td><td>4.26</td><td>3.22</td><td>0.78</td><td>1.80</td></tr>
+<tr><td>Isaiah StewartDET | C</td><td>7.75</td><td>4.15</td><td>1.06</td><td>0.55</td><td>0.94</td></tr>
+<tr><td>Moritz WagnerORL | C</td><td>13.97</td><td>6.07</td><td>1.45</td><td>0.47</td><td>1.03</td></tr>
+<tr><td>Tyler HerroMIA | SG</td><td>19.19</td><td>3.89</td><td>4.00</td><td>0.92</td><td>2.43</td></tr>
+<tr><td>Wendell Carter Jr.ORL | C</td><td>12.41</td><td>6.83</td><td>2.01</td><td>0.81</td><td>1.10</td></tr>
+<tr><td>Onyeka OkongwuATL | C</td><td>9.17</td><td>6.24</td><td>1.73</td><td>0.69</td><td>0.12</td></tr>
+<tr><td>Haywood HighsmithMIA | SF</td><td>3.03</td><td>2.73</td><td>0.38</td><td>0.45</td><td>0.84</td></tr>
+<tr><td>Dyson DanielsATL | SG</td><td>4.30</td><td>4.70</td><td>2.30</td><td>0.79</td><td>0.18</td></tr>
+<tr><td>Andre DrummondPHI | C</td><td>8.78</td><td>7.55</td><td>0.21</td><td>0.54</td><td>-0.54</td></tr>
+<tr><td>Miles McBrideNYK | PG</td><td>10.44</td><td>3.01</td><td>2.41</td><td>0.74</td><td>1.79</td></tr>
+<tr><td>Jakob PoeltlTOR | C</td><td>9.07</td><td>7.83</td><td>2.11</td><td>0.69</td><td>-0.33</td></tr>
+<tr><td>Joel EmbiidPHI | C</td><td>34.42</td><td>10.86</td><td>6.73</td><td>1.40</td><td>2.58</td></tr>
+<tr><td>Jeff GreenHOU | PF</td><td>5.06</td><td>2.98</td><td>0.73</td><td>0.23</td><td>0.87</td></tr>
+<tr><td>Cameron PayneNYK | PG</td><td>11.21</td><td>2.23</td><td>4.04</td><td>0.69</td><td>1.72</td></tr>
+<tr><td>Gary HarrisORL | SG</td><td>5.58</td><td>2.00</td><td>1.19</td><td>0.70</td><td>1.56</td></tr>
+<tr><td>T.J. McConnellIND | PG</td><td>14.23</td><td>2.81</td><td>7.55</td><td>0.92</td><td>0.71</td></tr>
+<tr><td>Cedi Osman| SF</td><td>5.70</td><td>2.67</td><td>1.88</td><td>0.37</td><td>1.12</td></tr>
+<tr><td>Aaron HolidayHOU | PG</td><td>9.31</td><td>1.97</td><td>2.59</td><td>0.65</td><td>1.58</td></tr>
+<tr><td>Naji MarshallDAL | SF</td><td>7.06</td><td>3.41</td><td>1.97</td><td>0.50</td><td>0.87</td></tr>
+<tr><td>Kris DunnLAC | PG</td><td>7.20</td><td>3.27</td><td>4.90</td><td>0.90</td><td>0.62</td></tr>
+<tr><td>Gordon Hayward| SF</td><td>9.38</td><td>2.84</td><td>3.00</td><td>0.61</td><td>1.20</td></tr>
+<tr><td>Aaron WigginsOKC | SG</td><td>8.62</td><td>3.49</td><td>1.17</td><td>0.46</td><td>1.01</td></tr>
+<tr><td>Larry Nance Jr.ATL | C</td><td>6.80</td><td>5.08</td><td>2.01</td><td>0.71</td><td>0.37</td></tr>
+<tr><td>Alec BurksMIA | SG</td><td>15.03</td><td>2.82</td><td>2.17</td><td>0.77</td><td>2.26</td></tr>
+<tr><td>Kevon LooneyGSW | C</td><td>3.73</td><td>6.63</td><td>2.12</td><td>0.55</td><td>-0.67</td></tr>
+<tr><td>David RoddyATL | PF</td><td>4.18</td><td>2.47</td><td>0.94</td><td>0.40</td><td>0.25</td></tr>
+<tr><td>Patrick WilliamsCHI | SF</td><td>7.92</td><td>2.96</td><td>0.88</td><td>0.60</td><td>1.22</td></tr>
+<tr><td>John KoncharMEM | SF</td><td>5.95</td><td>4.26</td><td>2.05</td><td>0.95</td><td>0.96</td></tr>
+<tr><td>Joe InglesMIN | SF</td><td>5.09</td><td>1.62</td><td>3.76</td><td>0.45</td><td>1.61</td></tr>
+<tr><td>Drew EubanksUTA | C</td><td>7.88</td><td>3.14</td><td>1.08</td><td>0.73</td><td>0.05</td></tr>
+<tr><td>Trey LylesSAC | PF</td><td>5.87</td><td>2.73</td><td>0.97</td><td>0.50</td><td>1.34</td></tr>
+<tr><td>Moses MoodyGSW | SG</td><td>8.84</td><td>3.98</td><td>0.69</td><td>0.54</td><td>1.18</td></tr>
+<tr><td>Jae CrowderMIL | PF</td><td>3.03</td><td>2.69</td><td>0.76</td><td>0.49</td><td>1.02</td></tr>
+<tr><td>Malcolm BrogdonWAS | PG</td><td>15.66</td><td>3.78</td><td>5.93</td><td>0.86</td><td>1.83</td></tr>
+<tr><td>Dean WadeCLE | PF</td><td>4.35</td><td>2.99</td><td>0.23</td><td>0.59</td><td>1.62</td></tr>
+<tr><td>Josh RichardsonMIA | SF</td><td>8.31</td><td>3.62</td><td>2.12</td><td>0.48</td><td>1.22</td></tr>
+<tr><td>Davion MitchellTOR | PG</td><td>5.91</td><td>0.82</td><td>2.70</td><td>0.66</td><td>1.05</td></tr>
+<tr><td>Dario SaricDEN | PF</td><td>10.67</td><td>4.36</td><td>2.96</td><td>0.50</td><td>1.48</td></tr>
+<tr><td>James WisemanIND | C</td><td>6.26</td><td>5.45</td><td>0.59</td><td>0.16</td><td>-0.08</td></tr>
+<tr><td>Dante ExumDAL | SG</td><td>8.37</td><td>2.19</td><td>3.44</td><td>0.47</td><td>1.54</td></tr>
+<tr><td>Sam MerrillCLE | SG</td><td>8.59</td><td>1.58</td><td>2.06</td><td>0.46</td><td>2.27</td></tr>
+<tr><td>Shaedon SharpePOR | SG</td><td>11.01</td><td>3.22</td><td>2.02</td><td>0.56</td><td>1.27</td></tr>
+<tr><td>Dennis Smith Jr.| PG</td><td>9.03</td><td>2.28</td><td>4.59</td><td>1.02</td><td>0.78</td></tr>
+<tr><td>Marvin Bagley IIIWAS | PF</td><td>11.48</td><td>5.71</td><td>0.98</td><td>0.53</td><td>0.38</td></tr>
+<tr><td>Jalen SmithCHI | PF</td><td>12.17</td><td>5.75</td><td>1.33</td><td>0.53</td><td>1.05</td></tr>
+<tr><td>Dalano BantonPOR | SG</td><td>11.00</td><td>3.21</td><td>2.62</td><td>0.58</td><td>0.79</td></tr>
+<tr><td>Ziaire WilliamsBKN | SF</td><td>9.27</td><td>2.81</td><td>1.39</td><td>0.57</td><td>1.32</td></tr>
+<tr><td>Jae'Sean TateHOU | PF</td><td>3.49</td><td>3.37</td><td>0.95</td><td>0.67</td><td>0.40</td></tr>
+<tr><td>Kenrich WilliamsOKC | SF</td><td>5.42</td><td>3.27</td><td>1.76</td><td>0.75</td><td>1.06</td></tr>
+<tr><td>Jose AlvaradoNOP | PG</td><td>10.02</td><td>2.13</td><td>2.72</td><td>1.05</td><td>1.70</td></tr>
+<tr><td>Quentin GrimesDAL | SG</td><td>6.56</td><td>2.53</td><td>1.27</td><td>0.64</td><td>1.51</td></tr>
+<tr><td>De'Anthony MeltonGSW | SG</td><td>12.71</td><td>4.13</td><td>3.09</td><td>1.05</td><td>1.92</td></tr>
+<tr><td>Lonnie Walker IVBOS | SG</td><td>11.47</td><td>2.83</td><td>1.43</td><td>0.48</td><td>1.54</td></tr>
+<tr><td>Talen Horton-TuckerCHI | SG</td><td>12.20</td><td>2.93</td><td>4.51</td><td>0.70</td><td>1.14</td></tr>
+<tr><td>Jevon CarterCHI | PG</td><td>6.82</td><td>0.99</td><td>1.92</td><td>0.73</td><td>1.65</td></tr>
+<tr><td>Luke KennardMEM | SG</td><td>11.18</td><td>1.66</td><td>3.49</td><td>0.59</td><td>2.64</td></tr>
+<tr><td>Jaden HardyDAL | SG</td><td>11.64</td><td>1.53</td><td>2.37</td><td>0.52</td><td>1.50</td></tr>
+<tr><td>Tre MannCHA | PG</td><td>11.11</td><td>3.18</td><td>4.17</td><td>0.78</td><td>1.62</td></tr>
+<tr><td>Cam ReddishLAL | SF</td><td>3.58</td><td>2.23</td><td>0.29</td><td>0.56</td><td>0.91</td></tr>
+<tr><td>Luke KornetBOS | C</td><td>8.36</td><td>5.67</td><td>1.65</td><td>0.64</td><td>-0.15</td></tr>
+<tr><td>Keon EllisSAC | SG</td><td>8.53</td><td>3.49</td><td>1.88</td><td>0.81</td><td>1.87</td></tr>
+<tr><td>Xavier TillmanBOS | PF</td><td>5.17</td><td>4.83</td><td>1.61</td><td>0.90</td><td>0.06</td></tr>
+<tr><td>Josh OkogiePHX | SF</td><td>5.79</td><td>3.37</td><td>1.08</td><td>0.75</td><td>0.99</td></tr>
+<tr><td>Goga BitadzeORL | C</td><td>7.21</td><td>7.34</td><td>1.56</td><td>0.66</td><td>-0.04</td></tr>
+<tr><td>Max ChristieLAL | SG</td><td>2.25</td><td>1.00</td><td>0.26</td><td>0.35</td><td>0.75</td></tr>
+<tr><td>Kevin LoveMIA | PF</td><td>12.81</td><td>5.09</td><td>2.96</td><td>0.63</td><td>1.77</td></tr>
+<tr><td>Day'Ron SharpeBKN | C</td><td>8.84</td><td>5.62</td><td>1.59</td><td>0.60</td><td>-0.07</td></tr>
+<tr><td>Jonathan IsaacORL | PF</td><td>9.59</td><td>5.46</td><td>0.23</td><td>0.84</td><td>0.82</td></tr>
+<tr><td>Markelle Fultz| PG</td><td>6.87</td><td>4.60</td><td>2.50</td><td>0.71</td><td>-0.21</td></tr>
+<tr><td>Doug McDermottIND | SF</td><td>3.54</td><td>-0.41</td><td>0.95</td><td>0.22</td><td>1.88</td></tr>
+<tr><td>Jaylin WilliamsOKC | C</td><td>5.17</td><td>4.27</td><td>2.22</td><td>0.52</td><td>0.96</td></tr>
+<tr><td>Nikola JovicMIA | PF</td><td>9.41</td><td>4.83</td><td>2.29</td><td>0.63</td><td>1.44</td></tr>
+<tr><td>Bryce McGowensPOR | SG</td><td>4.19</td><td>1.07</td><td>0.78</td><td>0.36</td><td>1.01</td></tr>
+<tr><td>Jaxson HayesLAL | C</td><td>7.14</td><td>6.74</td><td>0.72</td><td>0.30</td><td>-0.02</td></tr>
+<tr><td>Malachi FlynnSAS | PG</td><td>8.75</td><td>0.61</td><td>3.02</td><td>0.65</td><td>1.39</td></tr>
+<tr><td>Blake WesleySAS | PG</td><td>2.56</td><td>1.69</td><td>3.63</td><td>0.49</td><td>-0.16</td></tr>
+<tr><td>Zach LaVineCHI | SG</td><td>16.77</td><td>4.25</td><td>3.37</td><td>0.88</td><td>2.10</td></tr>
+<tr><td>Christian WoodLAL | PF</td><td>8.25</td><td>3.23</td><td>0.77</td><td>0.57</td><td>0.97</td></tr>
+<tr><td>Maxi KleberDAL | C</td><td>1.15</td><td>2.46</td><td>0.80</td><td>0.40</td><td>1.00</td></tr>
+<tr><td>Justin HolidayDEN | SG</td><td>1.29</td><td>1.65</td><td>1.10</td><td>0.23</td><td>1.03</td></tr>
+<tr><td>Chimezie Metu| C</td><td>10.45</td><td>4.94</td><td>1.12</td><td>0.65</td><td>1.10</td></tr>
+<tr><td>Trendon WatfordBKN | PF</td><td>11.18</td><td>4.68</td><td>2.16</td><td>0.44</td><td>0.84</td></tr>
+<tr><td>Dwight PowellDAL | C</td><td>6.43</td><td>5.68</td><td>2.35</td><td>0.58</td><td>0.24</td></tr>
+<tr><td>Troy Brown Jr.| SF</td><td>5.78</td><td>2.84</td><td>1.23</td><td>0.63</td><td>1.10</td></tr>
+<tr><td>Marcus Morris Sr.| PF</td><td>5.66</td><td>1.88</td><td>0.45</td><td>0.31</td><td>1.19</td></tr>
+<tr><td>Caleb HoustanORL | SG</td><td>2.88</td><td>0.84</td><td>-0.16</td><td>0.35</td><td>1.54</td></tr>
+<tr><td>Jake LaRaviaMEM | SF</td><td>10.57</td><td>2.78</td><td>1.40</td><td>0.59</td><td>1.67</td></tr>
+<tr><td>JT ThorCLE | PF</td><td>0.46</td><td>2.11</td><td>0.14</td><td>0.41</td><td>0.14</td></tr>
+<tr><td>Isaiah JacksonIND | C</td><td>10.34</td><td>6.76</td><td>1.12</td><td>0.55</td><td>0.19</td></tr>
+<tr><td>Jock LandaleHOU | C</td><td>7.62</td><td>5.50</td><td>1.90</td><td>0.70</td><td>0.25</td></tr>
+<tr><td>Cody MartinCHA | SF</td><td>7.56</td><td>3.74</td><td>3.32</td><td>0.92</td><td>0.80</td></tr>
+<tr><td>Delon WrightMIL | PG</td><td>8.27</td><td>3.64</td><td>4.07</td><td>1.09</td><td>1.16</td></tr>
+<tr><td>Mo BambaLAC | C</td><td>8.45</td><td>6.10</td><td>1.28</td><td>0.60</td><td>0.56</td></tr>
+<tr><td>Landry ShametNYK | SG</td><td>9.45</td><td>2.21</td><td>1.46</td><td>0.51</td><td>1.79</td></tr>
+<tr><td>Chris DuarteCHI | SG</td><td>4.61</td><td>1.48</td><td>0.69</td><td>0.51</td><td>1.32</td></tr>
+<tr><td>Jordan NworaTOR | PF</td><td>9.38</td><td>3.22</td><td>1.34</td><td>0.25</td><td>1.19</td></tr>
+<tr><td>LaMelo BallCHA | PG</td><td>28.37</td><td>5.79</td><td>8.35</td><td>1.26</td><td>3.00</td></tr>
+<tr><td>Chris BoucherTOR | C</td><td>10.10</td><td>4.28</td><td>0.73</td><td>0.56</td><td>1.32</td></tr>
+<tr><td>Bruno FernandoTOR | C</td><td>6.69</td><td>5.35</td><td>1.00</td><td>0.35</td><td>0.03</td></tr>
+<tr><td>Dalen TerryCHI | SG</td><td>3.09</td><td>3.69</td><td>2.37</td><td>0.71</td><td>-0.07</td></tr>
+<tr><td>Gary Payton IIGSW | SG</td><td>8.55</td><td>4.86</td><td>1.71</td><td>0.88</td><td>0.67</td></tr>
+<tr><td>Mason PlumleePHX | C</td><td>6.99</td><td>6.03</td><td>1.63</td><td>0.59</td><td>-0.05</td></tr>
+<tr><td>Davis Bertans| PF</td><td>8.30</td><td>2.52</td><td>0.76</td><td>0.40</td><td>2.11</td></tr>
+<tr><td>Keita Bates-DiopNYK | PF</td><td>3.68</td><td>3.55</td><td>0.75</td><td>0.55</td><td>0.31</td></tr>
+<tr><td>Oshae BrissettBOS | PF</td><td>3.75</td><td>3.11</td><td>0.97</td><td>0.51</td><td>0.64</td></tr>
+<tr><td>Danilo GallinariMIL | PF</td><td>9.98</td><td>3.35</td><td>2.09</td><td>0.48</td><td>1.84</td></tr>
+<tr><td>Jordan McLaughlinSAC | PG</td><td>7.41</td><td>2.59</td><td>4.14</td><td>0.86</td><td>1.51</td></tr>
+<tr><td>Seth CurryCHA | SG</td><td>8.04</td><td>1.93</td><td>1.30</td><td>0.61</td><td>1.73</td></tr>
+<tr><td>Johnny DavisWAS | SG</td><td>0.37</td><td>1.47</td><td>0.53</td><td>0.50</td><td>0.21</td></tr>
+<tr><td>MarJon BeauchampMIL | SG</td><td>4.08</td><td>1.95</td><td>0.30</td><td>0.29</td><td>0.73</td></tr>
+<tr><td>Marcus SmartMEM | PG</td><td>18.11</td><td>4.40</td><td>4.29</td><td>1.14</td><td>2.23</td></tr>
+<tr><td>Mike Muscala| C</td><td>3.82</td><td>2.34</td><td>0.87</td><td>0.56</td><td>1.15</td></tr>
+<tr><td>Shake MiltonBKN | SG</td><td>5.82</td><td>3.02</td><td>1.77</td><td>0.31</td><td>0.73</td></tr>
+<tr><td>Jarred VanderbiltLAL | PF</td><td>4.94</td><td>4.57</td><td>0.96</td><td>0.72</td><td>0.08</td></tr>
+<tr><td>Evan Fournier| SG</td><td>7.19</td><td>2.44</td><td>1.57</td><td>0.57</td><td>1.20</td></tr>
+<tr><td>Zeke NnajiDEN | PF</td><td>5.94</td><td>3.88</td><td>0.96</td><td>0.52</td><td>0.49</td></tr>
+<tr><td>Lamar StevensDET | SF</td><td>9.01</td><td>3.62</td><td>0.66</td><td>0.54</td><td>0.59</td></tr>
+<tr><td>Richaun HolmesWAS | C</td><td>7.49</td><td>4.69</td><td>0.97</td><td>0.58</td><td>0.26</td></tr>
+<tr><td>Omer Yurtseven| C</td><td>7.91</td><td>5.06</td><td>0.97</td><td>0.53</td><td>0.09</td></tr>
+<tr><td>Jalen McDanielsSAC | PF</td><td>6.64</td><td>2.27</td><td>1.45</td><td>0.62</td><td>0.83</td></tr>
+<tr><td>Mark WilliamsCHA | C</td><td>12.24</td><td>8.94</td><td>1.43</td><td>0.60</td><td>0.26</td></tr>
+<tr><td>Jaden SpringerBOS | SG</td><td>5.97</td><td>2.84</td><td>1.31</td><td>0.66</td><td>0.54</td></tr>
+<tr><td>Patrick Baldwin Jr.WAS | PF</td><td>5.65</td><td>2.85</td><td>1.01</td><td>0.58</td><td>0.93</td></tr>
+<tr><td>Robert Covington| PF</td><td>5.57</td><td>5.22</td><td>0.67</td><td>0.68</td><td>1.02</td></tr>
+<tr><td>P.J. TuckerLAC | PF</td><td>-1.28</td><td>1.90</td><td>0.10</td><td>0.48</td><td>0.49</td></tr>
+<tr><td>Tari EasonHOU | PF</td><td>9.80</td><td>5.64</td><td>0.97</td><td>0.83</td><td>0.38</td></tr>
+<tr><td>Monte MorrisPHX | PG</td><td>6.94</td><td>2.58</td><td>3.32</td><td>0.86</td><td>1.27</td></tr>
+<tr><td>Bol BolPHX | C</td><td>7.16</td><td>4.74</td><td>-0.07</td><td>0.19</td><td>0.39</td></tr>
+<tr><td>Anthony GillWAS | PF</td><td>8.99</td><td>4.10</td><td>1.67</td><td>0.65</td><td>0.56</td></tr>
+<tr><td>Yuta WatanabeMEM | SF</td><td>1.14</td><td>0.93</td><td>-0.04</td><td>0.48</td><td>0.75</td></tr>
+<tr><td>Nassir LittleMIA | SF</td><td>4.92</td><td>3.35</td><td>0.59</td><td>0.38</td><td>0.62</td></tr>
+<tr><td>Sandro MamukelashviliSAS | PF</td><td>7.19</td><td>5.06</td><td>2.26</td><td>0.50</td><td>0.46</td></tr>
+<tr><td>Alex LenSAC | C</td><td>2.47</td><td>4.88</td><td>1.50</td><td>0.40</td><td>-0.58</td></tr>
+<tr><td>Thomas BryantMIA | C</td><td>9.88</td><td>6.34</td><td>0.96</td><td>0.35</td><td>0.18</td></tr>
+<tr><td>Chuma Okeke| PF</td><td>2.97</td><td>2.41</td><td>0.26</td><td>0.63</td><td>0.99</td></tr>
+<tr><td>Dominick BarlowATL | PF</td><td>4.51</td><td>4.02</td><td>1.63</td><td>0.55</td><td>-0.07</td></tr>
+<tr><td>Patty MillsUTA | PG</td><td>5.88</td><td>1.79</td><td>1.41</td><td>0.60</td><td>1.31</td></tr>
+<tr><td>Trent ForrestATL | PG</td><td>0.76</td><td>1.20</td><td>4.31</td><td>0.68</td><td>-0.03</td></tr>
+<tr><td>Wesley MatthewsATL | SG</td><td>2.20</td><td>0.77</td><td>0.61</td><td>0.50</td><td>1.31</td></tr>
+<tr><td>Svi MykhailiukUTA | SG</td><td>6.53</td><td>1.26</td><td>1.60</td><td>0.51</td><td>1.94</td></tr>
+<tr><td>Aleksej Pokusevski| PF</td><td>5.76</td><td>2.97</td><td>1.28</td><td>0.47</td><td>0.74</td></tr>
+<tr><td>Derrick Rose| PG</td><td>11.39</td><td>1.94</td><td>5.20</td><td>0.52</td><td>1.05</td></tr>
+<tr><td>DeAndre JordanDEN | C</td><td>3.35</td><td>6.85</td><td>0.97</td><td>0.22</td><td>-1.16</td></tr>
+<tr><td>Eugene OmoruyiMIN | SF</td><td>10.73</td><td>4.76</td><td>1.98</td><td>0.59</td><td>0.51</td></tr>
+<tr><td>Ousmane DiengOKC | SF</td><td>6.01</td><td>2.60</td><td>1.67</td><td>0.42</td><td>0.81</td></tr>
+<tr><td>Brandon Boston Jr.SAS | SG</td><td>9.87</td><td>1.74</td><td>0.34</td><td>0.32</td><td>1.28</td></tr>
+<tr><td>JaVale McGeeSAC | C</td><td>9.38</td><td>6.23</td><td>0.24</td><td>0.24</td><td>-0.33</td></tr>
+<tr><td>Jeremiah Robinson-EarlNOP | PF</td><td>6.17</td><td>2.73</td><td>0.80</td><td>0.54</td><td>0.84</td></tr>
+<tr><td>Neemias QuetaBOS | C</td><td>6.58</td><td>6.87</td><td>0.72</td><td>0.23</td><td>-0.36</td></tr>
+<tr><td>Ja MorantMEM | PG</td><td>24.23</td><td>5.32</td><td>7.32</td><td>1.36</td><td>2.14</td></tr>
+<tr><td>Devonte' GrahamPOR | PG</td><td>8.26</td><td>1.36</td><td>3.45</td><td>0.70</td><td>1.79</td></tr>
+<tr><td>Orlando RobinsonSAC | C</td><td>7.59</td><td>4.07</td><td>2.54</td><td>0.51</td><td>0.83</td></tr>
+<tr><td>Kessler EdwardsDAL | SF</td><td>2.16</td><td>2.10</td><td>0.28</td><td>0.33</td><td>1.10</td></tr>
+<tr><td>Damian Jones| C</td><td>6.75</td><td>5.36</td><td>0.75</td><td>0.30</td><td>0.02</td></tr>
+<tr><td>Kira Lewis Jr.WAS | PG</td><td>5.26</td><td>2.27</td><td>2.78</td><td>0.62</td><td>0.29</td></tr>
+<tr><td>Markieff MorrisDAL | C</td><td>5.33</td><td>1.89</td><td>1.16</td><td>0.49</td><td>1.04</td></tr>
+<tr><td>Moses BrownPOR | C</td><td>4.37</td><td>5.74</td><td>0.61</td><td>0.40</td><td>-0.54</td></tr>
+<tr><td>Kenneth Lofton Jr.CHI | C</td><td>8.15</td><td>4.32</td><td>3.62</td><td>0.41</td><td>0.38</td></tr>
+<tr><td>Saben LeePHX | PG</td><td>8.88</td><td>2.82</td><td>3.51</td><td>0.90</td><td>1.09</td></tr>
+<tr><td>AJ Griffin| SF</td><td>5.60</td><td>2.03</td><td>0.52</td><td>0.63</td><td>0.68</td></tr>
+<tr><td>Luka GarzaMIN | C</td><td>18.49</td><td>5.41</td><td>0.87</td><td>0.51</td><td>1.52</td></tr>
+
+        </tbody>
+    </table>
+    <a href="lookup.html">Search Another Player</a>
+</body>
+</html>
