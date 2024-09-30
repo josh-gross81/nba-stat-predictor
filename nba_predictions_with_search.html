@@ -1,0 +1,2783 @@
+
+    <html>
+    <head>
+        <title>NBA Player Predictions</title>
+        <style>
+            body {font-family: Arial, sans-serif; margin: 40px;}
+            table {border-collapse: collapse; width: 100%;}
+            th, td {border: 1px solid #dddddd; text-align: left; padding: 8px;}
+            th {background-color: #4CAF50; color: white;}
+            #searchInput {margin-bottom: 20px; padding: 10px; width: 100%;}
+        </style>
+        <script>
+            function searchTable() {
+                var input, filter, table, tr, td, i, txtValue;
+                input = document.getElementById("searchInput");
+                filter = input.value.toUpperCase();
+                table = document.getElementById("predictionsTable");
+                tr = table.getElementsByTagName("tr");
+
+                for (i = 1; i < tr.length; i++) {
+                    td = tr[i].getElementsByTagName("td")[0];
+                    if (td) {
+                        txtValue = td.textContent || td.innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            tr[i].style.display = "";
+                        } else {
+                            tr[i].style.display = "none";
+                        }
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>NBA Player Predictions</h1>
+        <input type="text" id="searchInput" onkeyup="searchTable()" placeholder="Search for players..">
+        <table id="predictionsTable">
+        <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Name</th>
+      <th>PTS</th>
+      <th>REB</th>
+      <th>AST</th>
+      <th>STL</th>
+      <th>3P%</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Joel EmbiidPHI | C</td>
+      <td>35.473023</td>
+      <td>10.878918</td>
+      <td>7.191910</td>
+      <td>1.397492</td>
+      <td>2.845521</td>
+    </tr>
+    <tr>
+      <td>Luka DoncicDAL | SF</td>
+      <td>35.131277</td>
+      <td>9.159974</td>
+      <td>10.299738</td>
+      <td>1.691241</td>
+      <td>3.498499</td>
+    </tr>
+    <tr>
+      <td>Shai Gilgeous-AlexanderOKC | PG</td>
+      <td>30.162250</td>
+      <td>8.808906</td>
+      <td>6.868626</td>
+      <td>1.488977</td>
+      <td>2.430349</td>
+    </tr>
+    <tr>
+      <td>Donovan MitchellCLE | SG</td>
+      <td>28.793169</td>
+      <td>6.919341</td>
+      <td>6.432785</td>
+      <td>1.481782</td>
+      <td>3.036988</td>
+    </tr>
+    <tr>
+      <td>LaMelo BallCHA | PG</td>
+      <td>28.631804</td>
+      <td>5.570213</td>
+      <td>8.474560</td>
+      <td>1.237753</td>
+      <td>3.120975</td>
+    </tr>
+    <tr>
+      <td>Nikola JokicDEN | C</td>
+      <td>28.410304</td>
+      <td>10.206959</td>
+      <td>9.130690</td>
+      <td>1.593636</td>
+      <td>1.849510</td>
+    </tr>
+    <tr>
+      <td>Giannis AntetokounmpoMIL | PF</td>
+      <td>28.131766</td>
+      <td>10.666487</td>
+      <td>5.798831</td>
+      <td>1.405305</td>
+      <td>1.388370</td>
+    </tr>
+    <tr>
+      <td>Stephen CurryGSW | PG</td>
+      <td>27.846707</td>
+      <td>4.917074</td>
+      <td>5.945982</td>
+      <td>1.297675</td>
+      <td>3.701141</td>
+    </tr>
+    <tr>
+      <td>Jalen BrunsonNYK | PG</td>
+      <td>26.992355</td>
+      <td>5.463085</td>
+      <td>7.674497</td>
+      <td>1.342239</td>
+      <td>2.745831</td>
+    </tr>
+    <tr>
+      <td>Anthony EdwardsMIN | SG</td>
+      <td>26.723124</td>
+      <td>6.567920</td>
+      <td>5.186014</td>
+      <td>1.275558</td>
+      <td>2.695538</td>
+    </tr>
+    <tr>
+      <td>Jayson TatumBOS | SF</td>
+      <td>26.484593</td>
+      <td>6.758236</td>
+      <td>5.215477</td>
+      <td>1.319998</td>
+      <td>2.929942</td>
+    </tr>
+    <tr>
+      <td>Kawhi LeonardLAC | SF</td>
+      <td>25.690194</td>
+      <td>8.364638</td>
+      <td>4.483504</td>
+      <td>1.371734</td>
+      <td>2.435268</td>
+    </tr>
+    <tr>
+      <td>De'Aaron FoxSAC | PG</td>
+      <td>25.373876</td>
+      <td>5.860250</td>
+      <td>5.771551</td>
+      <td>1.361420</td>
+      <td>2.457848</td>
+    </tr>
+    <tr>
+      <td>Devin BookerPHX | SG</td>
+      <td>24.792818</td>
+      <td>4.895107</td>
+      <td>6.779887</td>
+      <td>1.142413</td>
+      <td>2.612899</td>
+    </tr>
+    <tr>
+      <td>Trae YoungATL | PG</td>
+      <td>24.756249</td>
+      <td>2.798506</td>
+      <td>9.890970</td>
+      <td>1.125568</td>
+      <td>3.265372</td>
+    </tr>
+    <tr>
+      <td>Kyrie IrvingDAL | PG</td>
+      <td>24.580594</td>
+      <td>5.662444</td>
+      <td>5.271706</td>
+      <td>1.335534</td>
+      <td>2.715789</td>
+    </tr>
+    <tr>
+      <td>Damian LillardMIL | PG</td>
+      <td>24.097092</td>
+      <td>4.249934</td>
+      <td>6.508107</td>
+      <td>1.170726</td>
+      <td>3.079568</td>
+    </tr>
+    <tr>
+      <td>LeBron JamesLAL | PF</td>
+      <td>24.078140</td>
+      <td>6.502730</td>
+      <td>7.723173</td>
+      <td>1.124761</td>
+      <td>2.011931</td>
+    </tr>
+    <tr>
+      <td>Ja MorantMEM | PG</td>
+      <td>23.742034</td>
+      <td>5.335478</td>
+      <td>7.107434</td>
+      <td>1.268025</td>
+      <td>2.043964</td>
+    </tr>
+    <tr>
+      <td>Kevin DurantPHX | PF</td>
+      <td>23.606802</td>
+      <td>6.141628</td>
+      <td>4.611331</td>
+      <td>0.939957</td>
+      <td>2.170324</td>
+    </tr>
+    <tr>
+      <td>Paul GeorgePHI | SF</td>
+      <td>23.604924</td>
+      <td>6.407736</td>
+      <td>4.133510</td>
+      <td>1.198736</td>
+      <td>2.797861</td>
+    </tr>
+    <tr>
+      <td>Jamal MurrayDEN | PG</td>
+      <td>23.068704</td>
+      <td>4.913415</td>
+      <td>7.270089</td>
+      <td>1.175990</td>
+      <td>2.594471</td>
+    </tr>
+    <tr>
+      <td>Jimmy ButlerMIA | SF</td>
+      <td>22.984218</td>
+      <td>7.032691</td>
+      <td>5.601984</td>
+      <td>1.433633</td>
+      <td>2.512823</td>
+    </tr>
+    <tr>
+      <td>Kristaps PorzingisBOS | C</td>
+      <td>22.479621</td>
+      <td>8.610256</td>
+      <td>2.933858</td>
+      <td>1.112903</td>
+      <td>2.184512</td>
+    </tr>
+    <tr>
+      <td>Desmond BaneMEM | SG</td>
+      <td>22.394564</td>
+      <td>4.483134</td>
+      <td>5.250015</td>
+      <td>1.079421</td>
+      <td>2.788973</td>
+    </tr>
+    <tr>
+      <td>Lauri MarkkanenUTA | PF</td>
+      <td>22.303531</td>
+      <td>6.794204</td>
+      <td>2.794470</td>
+      <td>1.176489</td>
+      <td>2.654497</td>
+    </tr>
+    <tr>
+      <td>Jaren Jackson Jr.MEM | PF</td>
+      <td>22.209658</td>
+      <td>7.166339</td>
+      <td>2.564601</td>
+      <td>0.895116</td>
+      <td>2.016683</td>
+    </tr>
+    <tr>
+      <td>Tyrese MaxeyPHI | PG</td>
+      <td>22.179545</td>
+      <td>4.817278</td>
+      <td>5.706950</td>
+      <td>1.172344</td>
+      <td>2.429107</td>
+    </tr>
+    <tr>
+      <td>Tyrese HaliburtonIND | PG</td>
+      <td>22.040686</td>
+      <td>5.117936</td>
+      <td>10.245476</td>
+      <td>1.330505</td>
+      <td>2.441625</td>
+    </tr>
+    <tr>
+      <td>Karl-Anthony TownsMIN | C</td>
+      <td>21.991222</td>
+      <td>6.777453</td>
+      <td>3.193273</td>
+      <td>0.887884</td>
+      <td>2.363811</td>
+    </tr>
+    <tr>
+      <td>Anthony DavisLAL | C</td>
+      <td>21.456150</td>
+      <td>9.648310</td>
+      <td>2.953570</td>
+      <td>1.102932</td>
+      <td>1.167930</td>
+    </tr>
+    <tr>
+      <td>Dejounte MurrayNOP | PG</td>
+      <td>20.473747</td>
+      <td>5.271507</td>
+      <td>5.877485</td>
+      <td>1.138815</td>
+      <td>1.790651</td>
+    </tr>
+    <tr>
+      <td>Anfernee SimonsPOR | PG</td>
+      <td>20.152175</td>
+      <td>3.775970</td>
+      <td>5.341275</td>
+      <td>0.804916</td>
+      <td>2.477196</td>
+    </tr>
+    <tr>
+      <td>Julius RandleNYK | PF</td>
+      <td>20.133993</td>
+      <td>5.613796</td>
+      <td>4.393260</td>
+      <td>0.887408</td>
+      <td>1.560476</td>
+    </tr>
+    <tr>
+      <td>Zion WilliamsonNOP | PF</td>
+      <td>20.013576</td>
+      <td>7.326527</td>
+      <td>3.432930</td>
+      <td>0.993570</td>
+      <td>0.747784</td>
+    </tr>
+    <tr>
+      <td>Immanuel QuickleyTOR | PG</td>
+      <td>19.960493</td>
+      <td>4.777303</td>
+      <td>5.814494</td>
+      <td>1.108748</td>
+      <td>2.743321</td>
+    </tr>
+    <tr>
+      <td>Jaylen BrownBOS | SF</td>
+      <td>19.922616</td>
+      <td>5.358274</td>
+      <td>3.469623</td>
+      <td>0.873934</td>
+      <td>1.764514</td>
+    </tr>
+    <tr>
+      <td>Franz WagnerORL | SF</td>
+      <td>19.869086</td>
+      <td>6.525850</td>
+      <td>3.746204</td>
+      <td>1.041673</td>
+      <td>1.826840</td>
+    </tr>
+    <tr>
+      <td>Cam ThomasBKN | SG</td>
+      <td>19.860990</td>
+      <td>4.375687</td>
+      <td>3.169983</td>
+      <td>0.785838</td>
+      <td>2.100057</td>
+    </tr>
+    <tr>
+      <td>Paolo BancheroORL | PF</td>
+      <td>19.735243</td>
+      <td>5.973314</td>
+      <td>4.633040</td>
+      <td>0.898051</td>
+      <td>1.564028</td>
+    </tr>
+    <tr>
+      <td>Darius GarlandCLE | PG</td>
+      <td>19.705315</td>
+      <td>3.113718</td>
+      <td>6.020644</td>
+      <td>1.065888</td>
+      <td>2.538631</td>
+    </tr>
+    <tr>
+      <td>Brandon IngramNOP | SF</td>
+      <td>19.608095</td>
+      <td>5.497176</td>
+      <td>5.412016</td>
+      <td>0.877737</td>
+      <td>1.551799</td>
+    </tr>
+    <tr>
+      <td>Tyler HerroMIA | SG</td>
+      <td>19.476978</td>
+      <td>3.736249</td>
+      <td>4.065337</td>
+      <td>0.947594</td>
+      <td>2.451648</td>
+    </tr>
+    <tr>
+      <td>Jalen WilliamsOKC | SG</td>
+      <td>19.357327</td>
+      <td>6.447882</td>
+      <td>4.844012</td>
+      <td>0.930883</td>
+      <td>1.854105</td>
+    </tr>
+    <tr>
+      <td>Luka GarzaMIN | C</td>
+      <td>19.217591</td>
+      <td>5.559184</td>
+      <td>0.990504</td>
+      <td>0.451895</td>
+      <td>1.541981</td>
+    </tr>
+    <tr>
+      <td>Collin SextonUTA | PG</td>
+      <td>19.185608</td>
+      <td>3.063574</td>
+      <td>5.755594</td>
+      <td>0.784567</td>
+      <td>2.151597</td>
+    </tr>
+    <tr>
+      <td>Pascal SiakamIND | PF</td>
+      <td>19.108433</td>
+      <td>7.338589</td>
+      <td>4.288855</td>
+      <td>0.957187</td>
+      <td>1.298466</td>
+    </tr>
+    <tr>
+      <td>Alperen SengunHOU | C</td>
+      <td>19.083555</td>
+      <td>8.616431</td>
+      <td>4.289373</td>
+      <td>1.056360</td>
+      <td>0.964345</td>
+    </tr>
+    <tr>
+      <td>Cade CunninghamDET | SG</td>
+      <td>19.067512</td>
+      <td>3.753536</td>
+      <td>6.328640</td>
+      <td>0.601219</td>
+      <td>1.709763</td>
+    </tr>
+    <tr>
+      <td>DeMar DeRozanSAC | SF</td>
+      <td>18.954563</td>
+      <td>5.582023</td>
+      <td>4.661796</td>
+      <td>1.009634</td>
+      <td>1.659754</td>
+    </tr>
+    <tr>
+      <td>CJ McCollumNOP | SG</td>
+      <td>18.814550</td>
+      <td>4.379050</td>
+      <td>4.515357</td>
+      <td>1.030322</td>
+      <td>2.388014</td>
+    </tr>
+    <tr>
+      <td>D'Angelo RussellLAL | PG</td>
+      <td>18.659984</td>
+      <td>4.177816</td>
+      <td>5.974182</td>
+      <td>1.036282</td>
+      <td>2.353133</td>
+    </tr>
+    <tr>
+      <td>Myles TurnerIND | C</td>
+      <td>18.653252</td>
+      <td>7.678352</td>
+      <td>2.114345</td>
+      <td>0.900576</td>
+      <td>1.768534</td>
+    </tr>
+    <tr>
+      <td>Terry RozierMIA | PG</td>
+      <td>18.386344</td>
+      <td>4.746678</td>
+      <td>5.105983</td>
+      <td>0.940708</td>
+      <td>1.961461</td>
+    </tr>
+    <tr>
+      <td>Bam AdebayoMIA | C</td>
+      <td>18.296932</td>
+      <td>8.486194</td>
+      <td>3.257281</td>
+      <td>1.103544</td>
+      <td>0.856576</td>
+    </tr>
+    <tr>
+      <td>Mikal BridgesNYK | SF</td>
+      <td>17.988305</td>
+      <td>5.249861</td>
+      <td>3.544157</td>
+      <td>0.906332</td>
+      <td>2.109556</td>
+    </tr>
+    <tr>
+      <td>James HardenLAC | SG</td>
+      <td>17.982003</td>
+      <td>4.041286</td>
+      <td>7.414132</td>
+      <td>1.142861</td>
+      <td>2.577062</td>
+    </tr>
+    <tr>
+      <td>Marcus SmartMEM | PG</td>
+      <td>17.889134</td>
+      <td>4.403398</td>
+      <td>4.296899</td>
+      <td>1.079827</td>
+      <td>2.202620</td>
+    </tr>
+    <tr>
+      <td>Kyle KuzmaWAS | PF</td>
+      <td>17.848402</td>
+      <td>5.095114</td>
+      <td>3.402148</td>
+      <td>0.664461</td>
+      <td>1.686050</td>
+    </tr>
+    <tr>
+      <td>Jalen GreenHOU | SG</td>
+      <td>17.818397</td>
+      <td>4.103387</td>
+      <td>3.094027</td>
+      <td>0.857322</td>
+      <td>2.085523</td>
+    </tr>
+    <tr>
+      <td>Scottie BarnesTOR | SF</td>
+      <td>17.427291</td>
+      <td>7.338699</td>
+      <td>4.930829</td>
+      <td>0.963892</td>
+      <td>1.320895</td>
+    </tr>
+    <tr>
+      <td>Donte DiVincenzoNYK | SG</td>
+      <td>17.365252</td>
+      <td>5.341901</td>
+      <td>3.263712</td>
+      <td>1.204628</td>
+      <td>2.495557</td>
+    </tr>
+    <tr>
+      <td>Khris MiddletonMIL | SF</td>
+      <td>17.307510</td>
+      <td>4.228821</td>
+      <td>5.508306</td>
+      <td>0.808266</td>
+      <td>1.952680</td>
+    </tr>
+    <tr>
+      <td>Devin VassellSAS | SG</td>
+      <td>17.209801</td>
+      <td>5.361579</td>
+      <td>3.850698</td>
+      <td>0.881280</td>
+      <td>1.994694</td>
+    </tr>
+    <tr>
+      <td>Bogdan BogdanovicATL | SG</td>
+      <td>16.938586</td>
+      <td>4.756493</td>
+      <td>3.337558</td>
+      <td>0.954264</td>
+      <td>2.215563</td>
+    </tr>
+    <tr>
+      <td>Bradley BealPHX | SG</td>
+      <td>16.896312</td>
+      <td>4.064145</td>
+      <td>4.561113</td>
+      <td>0.862273</td>
+      <td>1.932808</td>
+    </tr>
+    <tr>
+      <td>Domantas SabonisSAC | C</td>
+      <td>16.893815</td>
+      <td>8.208745</td>
+      <td>5.895864</td>
+      <td>1.098197</td>
+      <td>0.777332</td>
+    </tr>
+    <tr>
+      <td>Michael Porter Jr.DEN | PF</td>
+      <td>16.803678</td>
+      <td>5.133354</td>
+      <td>1.946634</td>
+      <td>0.989892</td>
+      <td>2.055710</td>
+    </tr>
+    <tr>
+      <td>Zach LaVineCHI | SG</td>
+      <td>16.757598</td>
+      <td>4.144116</td>
+      <td>3.352706</td>
+      <td>0.869557</td>
+      <td>2.061123</td>
+    </tr>
+    <tr>
+      <td>Jordan PooleWAS | SG</td>
+      <td>16.523462</td>
+      <td>3.360433</td>
+      <td>3.796035</td>
+      <td>0.678416</td>
+      <td>2.148482</td>
+    </tr>
+    <tr>
+      <td>Klay ThompsonDAL | SG</td>
+      <td>16.458328</td>
+      <td>4.005405</td>
+      <td>2.276903</td>
+      <td>0.716730</td>
+      <td>2.300002</td>
+    </tr>
+    <tr>
+      <td>Jerami GrantPOR | PF</td>
+      <td>16.399458</td>
+      <td>5.616996</td>
+      <td>2.718120</td>
+      <td>0.647727</td>
+      <td>1.621042</td>
+    </tr>
+    <tr>
+      <td>Miles BridgesCHA | SF</td>
+      <td>16.278593</td>
+      <td>5.188850</td>
+      <td>2.620258</td>
+      <td>0.794879</td>
+      <td>1.723628</td>
+    </tr>
+    <tr>
+      <td>Jalen SuggsORL | PG</td>
+      <td>16.272872</td>
+      <td>4.614230</td>
+      <td>3.284613</td>
+      <td>1.212256</td>
+      <td>2.103227</td>
+    </tr>
+    <tr>
+      <td>Derrick WhiteBOS | SG</td>
+      <td>16.165453</td>
+      <td>5.315753</td>
+      <td>4.892624</td>
+      <td>1.201940</td>
+      <td>2.192728</td>
+    </tr>
+    <tr>
+      <td>Trey Murphy IIINOP | SF</td>
+      <td>16.138831</td>
+      <td>5.821237</td>
+      <td>2.664604</td>
+      <td>1.067251</td>
+      <td>2.546656</td>
+    </tr>
+    <tr>
+      <td>Fred VanVleetHOU | PG</td>
+      <td>15.971024</td>
+      <td>3.545490</td>
+      <td>6.288502</td>
+      <td>1.278070</td>
+      <td>2.476630</td>
+    </tr>
+    <tr>
+      <td>Jonathan KumingaGSW | SF</td>
+      <td>15.786913</td>
+      <td>5.534888</td>
+      <td>2.489587</td>
+      <td>0.766990</td>
+      <td>1.196637</td>
+    </tr>
+    <tr>
+      <td>Austin ReavesLAL | SG</td>
+      <td>15.768034</td>
+      <td>4.383735</td>
+      <td>4.827062</td>
+      <td>0.976548</td>
+      <td>2.065064</td>
+    </tr>
+    <tr>
+      <td>Coby WhiteCHI | PG</td>
+      <td>15.689647</td>
+      <td>3.170751</td>
+      <td>4.198785</td>
+      <td>0.890169</td>
+      <td>2.150375</td>
+    </tr>
+    <tr>
+      <td>Naz ReidMIN | C</td>
+      <td>15.617278</td>
+      <td>6.393239</td>
+      <td>1.523175</td>
+      <td>0.751815</td>
+      <td>1.688327</td>
+    </tr>
+    <tr>
+      <td>Malcolm BrogdonWAS | PG</td>
+      <td>15.414356</td>
+      <td>3.721225</td>
+      <td>5.710156</td>
+      <td>0.824970</td>
+      <td>1.792873</td>
+    </tr>
+    <tr>
+      <td>RJ BarrettTOR | SF</td>
+      <td>15.229554</td>
+      <td>4.159956</td>
+      <td>2.938896</td>
+      <td>0.568642</td>
+      <td>1.369862</td>
+    </tr>
+    <tr>
+      <td>Alec BurksMIA | SG</td>
+      <td>15.084274</td>
+      <td>2.960470</td>
+      <td>2.122861</td>
+      <td>0.717350</td>
+      <td>2.160227</td>
+    </tr>
+    <tr>
+      <td>Evan MobleyCLE | PF</td>
+      <td>15.076175</td>
+      <td>7.816748</td>
+      <td>3.009163</td>
+      <td>0.924074</td>
+      <td>0.630097</td>
+    </tr>
+    <tr>
+      <td>Malik MonkSAC | SG</td>
+      <td>14.419845</td>
+      <td>2.082447</td>
+      <td>4.960215</td>
+      <td>0.623800</td>
+      <td>1.759273</td>
+    </tr>
+    <tr>
+      <td>Moritz WagnerORL | C</td>
+      <td>14.136611</td>
+      <td>5.860295</td>
+      <td>1.576027</td>
+      <td>0.497869</td>
+      <td>1.061223</td>
+    </tr>
+    <tr>
+      <td>Jonas Valanciunas| C</td>
+      <td>14.127303</td>
+      <td>7.492213</td>
+      <td>2.574271</td>
+      <td>0.693140</td>
+      <td>0.786863</td>
+    </tr>
+    <tr>
+      <td>Josh GiddeyCHI | SF</td>
+      <td>14.125659</td>
+      <td>4.889548</td>
+      <td>4.646936</td>
+      <td>0.925699</td>
+      <td>1.003000</td>
+    </tr>
+    <tr>
+      <td>Jarrett AllenCLE | C</td>
+      <td>13.992031</td>
+      <td>9.044680</td>
+      <td>2.167005</td>
+      <td>0.795595</td>
+      <td>0.335429</td>
+    </tr>
+    <tr>
+      <td>Gary Trent Jr.MIL | SG</td>
+      <td>13.971745</td>
+      <td>3.593144</td>
+      <td>2.068583</td>
+      <td>0.875777</td>
+      <td>2.161306</td>
+    </tr>
+    <tr>
+      <td>Tobias HarrisDET | PF</td>
+      <td>13.949867</td>
+      <td>5.155381</td>
+      <td>2.607858</td>
+      <td>0.856439</td>
+      <td>1.252590</td>
+    </tr>
+    <tr>
+      <td>Nikola VucevicCHI | C</td>
+      <td>13.946888</td>
+      <td>7.288865</td>
+      <td>2.873829</td>
+      <td>0.701405</td>
+      <td>0.572451</td>
+    </tr>
+    <tr>
+      <td>John CollinsUTA | PF</td>
+      <td>13.896514</td>
+      <td>5.219213</td>
+      <td>1.356967</td>
+      <td>0.709392</td>
+      <td>1.392300</td>
+    </tr>
+    <tr>
+      <td>Mike ConleyMIN | PG</td>
+      <td>13.893725</td>
+      <td>3.872154</td>
+      <td>5.953145</td>
+      <td>1.103357</td>
+      <td>2.248825</td>
+    </tr>
+    <tr>
+      <td>Jaden IveyDET | SG</td>
+      <td>13.776575</td>
+      <td>2.850135</td>
+      <td>3.259591</td>
+      <td>0.643210</td>
+      <td>1.439692</td>
+    </tr>
+    <tr>
+      <td>Jordan ClarksonUTA | SG</td>
+      <td>13.690112</td>
+      <td>1.438865</td>
+      <td>4.010725</td>
+      <td>0.505035</td>
+      <td>1.456549</td>
+    </tr>
+    <tr>
+      <td>Cole AnthonyORL | PG</td>
+      <td>13.657403</td>
+      <td>2.557613</td>
+      <td>2.892155</td>
+      <td>0.796985</td>
+      <td>1.581988</td>
+    </tr>
+    <tr>
+      <td>Cameron JohnsonBKN | PF</td>
+      <td>13.532373</td>
+      <td>4.045312</td>
+      <td>2.564583</td>
+      <td>0.845041</td>
+      <td>2.041097</td>
+    </tr>
+    <tr>
+      <td>Caris LeVertCLE | SF</td>
+      <td>13.502735</td>
+      <td>4.305167</td>
+      <td>4.562331</td>
+      <td>0.836470</td>
+      <td>1.293968</td>
+    </tr>
+    <tr>
+      <td>Kelly OlynykTOR | C</td>
+      <td>13.356925</td>
+      <td>5.377795</td>
+      <td>5.412626</td>
+      <td>0.776121</td>
+      <td>1.537317</td>
+    </tr>
+    <tr>
+      <td>Kelly Oubre Jr.PHI | SF</td>
+      <td>13.239038</td>
+      <td>4.724031</td>
+      <td>1.398946</td>
+      <td>0.718990</td>
+      <td>1.167359</td>
+    </tr>
+    <tr>
+      <td>De'Andre HunterATL | SF</td>
+      <td>13.190992</td>
+      <td>3.770682</td>
+      <td>1.579653</td>
+      <td>0.599401</td>
+      <td>1.738504</td>
+    </tr>
+    <tr>
+      <td>Kevin LoveMIA | PF</td>
+      <td>13.183925</td>
+      <td>5.210290</td>
+      <td>3.059522</td>
+      <td>0.685484</td>
+      <td>1.823916</td>
+    </tr>
+    <tr>
+      <td>Bobby PortisMIL | PF</td>
+      <td>13.048005</td>
+      <td>5.376124</td>
+      <td>1.164315</td>
+      <td>0.523868</td>
+      <td>1.080801</td>
+    </tr>
+    <tr>
+      <td>T.J. McConnellIND | PG</td>
+      <td>13.002127</td>
+      <td>3.010640</td>
+      <td>6.986588</td>
+      <td>0.837301</td>
+      <td>0.468249</td>
+    </tr>
+    <tr>
+      <td>Andrew WigginsGSW | SF</td>
+      <td>12.999242</td>
+      <td>4.247513</td>
+      <td>1.901921</td>
+      <td>0.802187</td>
+      <td>1.291167</td>
+    </tr>
+    <tr>
+      <td>Keegan MurraySAC | PF</td>
+      <td>12.951418</td>
+      <td>5.508066</td>
+      <td>1.796750</td>
+      <td>0.917450</td>
+      <td>1.685166</td>
+    </tr>
+    <tr>
+      <td>OG AnunobyNYK | SF</td>
+      <td>12.914709</td>
+      <td>4.982778</td>
+      <td>2.027114</td>
+      <td>0.895941</td>
+      <td>1.508896</td>
+    </tr>
+    <tr>
+      <td>Corey KispertWAS | SF</td>
+      <td>12.901118</td>
+      <td>3.282198</td>
+      <td>2.037785</td>
+      <td>0.659647</td>
+      <td>2.203831</td>
+    </tr>
+    <tr>
+      <td>Rudy GobertMIN | C</td>
+      <td>12.804761</td>
+      <td>9.207494</td>
+      <td>1.608975</td>
+      <td>0.913317</td>
+      <td>0.046551</td>
+    </tr>
+    <tr>
+      <td>De'Anthony MeltonGSW | SG</td>
+      <td>12.711970</td>
+      <td>4.134131</td>
+      <td>3.099999</td>
+      <td>1.075063</td>
+      <td>1.897382</td>
+    </tr>
+    <tr>
+      <td>Wendell Carter Jr.ORL | C</td>
+      <td>12.575296</td>
+      <td>6.695411</td>
+      <td>2.143871</td>
+      <td>0.836751</td>
+      <td>1.226976</td>
+    </tr>
+    <tr>
+      <td>Aaron GordonDEN | PF</td>
+      <td>12.560169</td>
+      <td>6.237743</td>
+      <td>3.258286</td>
+      <td>1.002869</td>
+      <td>0.740027</td>
+    </tr>
+    <tr>
+      <td>Alex CarusoOKC | PG</td>
+      <td>12.536509</td>
+      <td>5.051956</td>
+      <td>3.543854</td>
+      <td>1.191767</td>
+      <td>1.990661</td>
+    </tr>
+    <tr>
+      <td>Jalen JohnsonATL | PF</td>
+      <td>12.480094</td>
+      <td>6.170574</td>
+      <td>3.028422</td>
+      <td>0.876817</td>
+      <td>0.944252</td>
+    </tr>
+    <tr>
+      <td>Jalen SmithCHI | PF</td>
+      <td>12.330317</td>
+      <td>5.497605</td>
+      <td>1.412507</td>
+      <td>0.549664</td>
+      <td>1.125891</td>
+    </tr>
+    <tr>
+      <td>Mark WilliamsCHA | C</td>
+      <td>12.233771</td>
+      <td>8.294918</td>
+      <td>1.450455</td>
+      <td>0.624859</td>
+      <td>0.360899</td>
+    </tr>
+    <tr>
+      <td>Deni AvdijaPOR | SF</td>
+      <td>12.223106</td>
+      <td>4.669547</td>
+      <td>3.152647</td>
+      <td>0.712945</td>
+      <td>1.384553</td>
+    </tr>
+    <tr>
+      <td>Grayson AllenPHX | SG</td>
+      <td>12.119416</td>
+      <td>3.189487</td>
+      <td>2.549268</td>
+      <td>0.825856</td>
+      <td>2.472644</td>
+    </tr>
+    <tr>
+      <td>Talen Horton-TuckerCHI | SG</td>
+      <td>12.050799</td>
+      <td>3.035244</td>
+      <td>4.256210</td>
+      <td>0.628366</td>
+      <td>1.035045</td>
+    </tr>
+    <tr>
+      <td>Lonnie Walker IVBOS | SG</td>
+      <td>11.938606</td>
+      <td>2.857693</td>
+      <td>1.447697</td>
+      <td>0.469797</td>
+      <td>1.521609</td>
+    </tr>
+    <tr>
+      <td>Tyus JonesPHX | PG</td>
+      <td>11.933206</td>
+      <td>3.471677</td>
+      <td>6.689060</td>
+      <td>1.036979</td>
+      <td>1.367513</td>
+    </tr>
+    <tr>
+      <td>Jrue HolidayBOS | PG</td>
+      <td>11.895338</td>
+      <td>4.593393</td>
+      <td>4.006207</td>
+      <td>0.998258</td>
+      <td>1.625130</td>
+    </tr>
+    <tr>
+      <td>Zach CollinsSAS | C</td>
+      <td>11.893925</td>
+      <td>4.227736</td>
+      <td>2.761650</td>
+      <td>0.492480</td>
+      <td>0.939352</td>
+    </tr>
+    <tr>
+      <td>Brook LopezMIL | C</td>
+      <td>11.879427</td>
+      <td>5.655836</td>
+      <td>1.459883</td>
+      <td>0.837997</td>
+      <td>1.261563</td>
+    </tr>
+    <tr>
+      <td>Kevin HuerterSAC | SG</td>
+      <td>11.869694</td>
+      <td>3.788139</td>
+      <td>3.043107</td>
+      <td>0.948250</td>
+      <td>1.842072</td>
+    </tr>
+    <tr>
+      <td>Jaden HardyDAL | SG</td>
+      <td>11.760082</td>
+      <td>1.517417</td>
+      <td>2.275440</td>
+      <td>0.461103</td>
+      <td>1.424461</td>
+    </tr>
+    <tr>
+      <td>Saddiq BeyWAS | SF</td>
+      <td>11.726700</td>
+      <td>4.094026</td>
+      <td>1.435644</td>
+      <td>0.885940</td>
+      <td>1.821096</td>
+    </tr>
+    <tr>
+      <td>Jusuf NurkicPHX | C</td>
+      <td>11.656224</td>
+      <td>6.910657</td>
+      <td>3.323888</td>
+      <td>0.981207</td>
+      <td>0.376081</td>
+    </tr>
+    <tr>
+      <td>Jalen DurenDET | C</td>
+      <td>11.638092</td>
+      <td>7.138245</td>
+      <td>1.637830</td>
+      <td>0.508364</td>
+      <td>0.391062</td>
+    </tr>
+    <tr>
+      <td>Norman PowellLAC | SG</td>
+      <td>11.608927</td>
+      <td>2.773884</td>
+      <td>0.804067</td>
+      <td>0.504997</td>
+      <td>1.735108</td>
+    </tr>
+    <tr>
+      <td>Herbert JonesNOP | SF</td>
+      <td>11.549450</td>
+      <td>5.164558</td>
+      <td>2.549606</td>
+      <td>0.888152</td>
+      <td>1.766751</td>
+    </tr>
+    <tr>
+      <td>Bennedict MathurinIND | SG</td>
+      <td>11.498057</td>
+      <td>2.503569</td>
+      <td>1.508878</td>
+      <td>0.392961</td>
+      <td>1.499835</td>
+    </tr>
+    <tr>
+      <td>Marvin Bagley IIIWAS | PF</td>
+      <td>11.421157</td>
+      <td>5.652606</td>
+      <td>0.989113</td>
+      <td>0.534701</td>
+      <td>0.413531</td>
+    </tr>
+    <tr>
+      <td>Dennis SchroderBKN | PG</td>
+      <td>11.413798</td>
+      <td>1.978011</td>
+      <td>5.114864</td>
+      <td>0.695697</td>
+      <td>1.412322</td>
+    </tr>
+    <tr>
+      <td>Russell WestbrookDEN | PG</td>
+      <td>11.410654</td>
+      <td>3.669597</td>
+      <td>4.127082</td>
+      <td>0.628946</td>
+      <td>0.581647</td>
+    </tr>
+    <tr>
+      <td>Buddy HieldGSW | SG</td>
+      <td>11.399426</td>
+      <td>3.186339</td>
+      <td>2.449797</td>
+      <td>0.652851</td>
+      <td>1.858399</td>
+    </tr>
+    <tr>
+      <td>Aaron NesmithIND | SF</td>
+      <td>11.286987</td>
+      <td>3.937052</td>
+      <td>1.544736</td>
+      <td>0.777607</td>
+      <td>1.792528</td>
+    </tr>
+    <tr>
+      <td>Deandre AytonPOR | C</td>
+      <td>11.279390</td>
+      <td>6.901693</td>
+      <td>0.837328</td>
+      <td>0.508416</td>
+      <td>-0.026805</td>
+    </tr>
+    <tr>
+      <td>Trendon WatfordBKN | PF</td>
+      <td>11.250606</td>
+      <td>4.569373</td>
+      <td>2.195032</td>
+      <td>0.444858</td>
+      <td>0.872104</td>
+    </tr>
+    <tr>
+      <td>Tim Hardaway Jr.DET | SG</td>
+      <td>11.244127</td>
+      <td>2.282596</td>
+      <td>1.333869</td>
+      <td>0.527732</td>
+      <td>1.809737</td>
+    </tr>
+    <tr>
+      <td>Shaedon SharpePOR | SG</td>
+      <td>11.166218</td>
+      <td>3.129141</td>
+      <td>1.978061</td>
+      <td>0.546460</td>
+      <td>1.267483</td>
+    </tr>
+    <tr>
+      <td>Max StrusCLE | SG</td>
+      <td>11.158094</td>
+      <td>3.751038</td>
+      <td>3.188847</td>
+      <td>0.885486</td>
+      <td>1.877857</td>
+    </tr>
+    <tr>
+      <td>Rui HachimuraLAL | PF</td>
+      <td>11.144050</td>
+      <td>4.748110</td>
+      <td>1.109749</td>
+      <td>0.548543</td>
+      <td>1.212858</td>
+    </tr>
+    <tr>
+      <td>Dalano BantonPOR | SG</td>
+      <td>11.112419</td>
+      <td>3.483891</td>
+      <td>2.522267</td>
+      <td>0.537480</td>
+      <td>0.741762</td>
+    </tr>
+    <tr>
+      <td>Tre JonesSAS | PG</td>
+      <td>11.048791</td>
+      <td>4.030911</td>
+      <td>5.780326</td>
+      <td>1.072309</td>
+      <td>1.111787</td>
+    </tr>
+    <tr>
+      <td>Vince Williams Jr.MEM | SG</td>
+      <td>11.014441</td>
+      <td>4.054006</td>
+      <td>3.260966</td>
+      <td>0.817059</td>
+      <td>1.842884</td>
+    </tr>
+    <tr>
+      <td>Luke KennardMEM | SG</td>
+      <td>10.890831</td>
+      <td>1.455244</td>
+      <td>3.560193</td>
+      <td>0.631662</td>
+      <td>2.545141</td>
+    </tr>
+    <tr>
+      <td>Tre MannCHA | PG</td>
+      <td>10.877722</td>
+      <td>2.932074</td>
+      <td>4.081934</td>
+      <td>0.823229</td>
+      <td>1.646429</td>
+    </tr>
+    <tr>
+      <td>Payton PritchardBOS | PG</td>
+      <td>10.823346</td>
+      <td>2.495962</td>
+      <td>3.938229</td>
+      <td>0.809588</td>
+      <td>1.955985</td>
+    </tr>
+    <tr>
+      <td>Eugene OmoruyiMIN | SF</td>
+      <td>10.796005</td>
+      <td>4.889044</td>
+      <td>1.926551</td>
+      <td>0.553940</td>
+      <td>0.544796</td>
+    </tr>
+    <tr>
+      <td>Dario SaricDEN | PF</td>
+      <td>10.793175</td>
+      <td>4.304398</td>
+      <td>3.047332</td>
+      <td>0.567136</td>
+      <td>1.532140</td>
+    </tr>
+    <tr>
+      <td>Jake LaRaviaMEM | SF</td>
+      <td>10.783039</td>
+      <td>2.754792</td>
+      <td>1.468167</td>
+      <td>0.596700</td>
+      <td>1.662949</td>
+    </tr>
+    <tr>
+      <td>Cameron PayneNYK | PG</td>
+      <td>10.745013</td>
+      <td>2.195590</td>
+      <td>3.867005</td>
+      <td>0.675975</td>
+      <td>1.601602</td>
+    </tr>
+    <tr>
+      <td>Derrick Rose| PG</td>
+      <td>10.622281</td>
+      <td>2.024539</td>
+      <td>4.839371</td>
+      <td>0.457287</td>
+      <td>0.879563</td>
+    </tr>
+    <tr>
+      <td>Jabari Smith Jr.HOU | PF</td>
+      <td>10.498307</td>
+      <td>4.893552</td>
+      <td>1.207961</td>
+      <td>0.715132</td>
+      <td>1.311989</td>
+    </tr>
+    <tr>
+      <td>Brandon Boston Jr.SAS | SG</td>
+      <td>10.468468</td>
+      <td>1.645515</td>
+      <td>0.361767</td>
+      <td>0.266143</td>
+      <td>1.274429</td>
+    </tr>
+    <tr>
+      <td>Keldon JohnsonSAS | SF</td>
+      <td>10.459534</td>
+      <td>2.914006</td>
+      <td>1.927771</td>
+      <td>0.476876</td>
+      <td>1.259545</td>
+    </tr>
+    <tr>
+      <td>Ayo DosunmuCHI | SG</td>
+      <td>10.292110</td>
+      <td>3.468881</td>
+      <td>2.903633</td>
+      <td>0.691581</td>
+      <td>1.138428</td>
+    </tr>
+    <tr>
+      <td>Chris PaulSAS | PG</td>
+      <td>10.284483</td>
+      <td>3.118297</td>
+      <td>6.510692</td>
+      <td>1.064061</td>
+      <td>1.364885</td>
+    </tr>
+    <tr>
+      <td>Chimezie Metu| C</td>
+      <td>10.251291</td>
+      <td>4.728442</td>
+      <td>1.180298</td>
+      <td>0.671085</td>
+      <td>1.075405</td>
+    </tr>
+    <tr>
+      <td>Miles McBrideNYK | PG</td>
+      <td>10.242858</td>
+      <td>2.761870</td>
+      <td>2.323298</td>
+      <td>0.755813</td>
+      <td>1.709456</td>
+    </tr>
+    <tr>
+      <td>Tari EasonHOU | PF</td>
+      <td>10.237711</td>
+      <td>5.678084</td>
+      <td>0.942527</td>
+      <td>0.829514</td>
+      <td>0.495831</td>
+    </tr>
+    <tr>
+      <td>Ivica ZubacLAC | C</td>
+      <td>10.186651</td>
+      <td>7.428883</td>
+      <td>1.277356</td>
+      <td>0.590874</td>
+      <td>0.108877</td>
+    </tr>
+    <tr>
+      <td>Chris BoucherTOR | C</td>
+      <td>10.140602</td>
+      <td>4.273978</td>
+      <td>0.833471</td>
+      <td>0.527573</td>
+      <td>1.252130</td>
+    </tr>
+    <tr>
+      <td>Obi ToppinIND | PF</td>
+      <td>10.117816</td>
+      <td>4.371473</td>
+      <td>1.605772</td>
+      <td>0.536822</td>
+      <td>0.978300</td>
+    </tr>
+    <tr>
+      <td>Isaiah JacksonIND | C</td>
+      <td>10.101453</td>
+      <td>6.210134</td>
+      <td>1.037013</td>
+      <td>0.530731</td>
+      <td>0.136238</td>
+    </tr>
+    <tr>
+      <td>Harrison BarnesSAS | PF</td>
+      <td>10.086857</td>
+      <td>3.867076</td>
+      <td>1.281052</td>
+      <td>0.666756</td>
+      <td>1.674714</td>
+    </tr>
+    <tr>
+      <td>Reggie JacksonPHI | PG</td>
+      <td>10.009618</td>
+      <td>2.132886</td>
+      <td>4.138586</td>
+      <td>0.442218</td>
+      <td>1.016378</td>
+    </tr>
+    <tr>
+      <td>Draymond GreenGSW | PF</td>
+      <td>9.933009</td>
+      <td>5.121961</td>
+      <td>5.388428</td>
+      <td>0.918663</td>
+      <td>0.838331</td>
+    </tr>
+    <tr>
+      <td>Jonathan IsaacORL | PF</td>
+      <td>9.860940</td>
+      <td>5.523999</td>
+      <td>0.334852</td>
+      <td>0.855788</td>
+      <td>0.835979</td>
+    </tr>
+    <tr>
+      <td>Nikola JovicMIA | PF</td>
+      <td>9.853452</td>
+      <td>4.661740</td>
+      <td>2.469856</td>
+      <td>0.702857</td>
+      <td>1.600612</td>
+    </tr>
+    <tr>
+      <td>Danilo GallinariMIL | PF</td>
+      <td>9.825771</td>
+      <td>3.283829</td>
+      <td>2.069747</td>
+      <td>0.486840</td>
+      <td>1.771474</td>
+    </tr>
+    <tr>
+      <td>Luguentz DortOKC | SG</td>
+      <td>9.780649</td>
+      <td>3.058712</td>
+      <td>1.173424</td>
+      <td>0.770383</td>
+      <td>1.888245</td>
+    </tr>
+    <tr>
+      <td>Thomas BryantMIA | C</td>
+      <td>9.769414</td>
+      <td>6.161264</td>
+      <td>0.961857</td>
+      <td>0.348983</td>
+      <td>0.146786</td>
+    </tr>
+    <tr>
+      <td>Jordan NworaTOR | PF</td>
+      <td>9.763824</td>
+      <td>3.088154</td>
+      <td>1.405163</td>
+      <td>0.287938</td>
+      <td>1.217444</td>
+    </tr>
+    <tr>
+      <td>Jose AlvaradoNOP | PG</td>
+      <td>9.757690</td>
+      <td>2.257224</td>
+      <td>2.662818</td>
+      <td>1.055978</td>
+      <td>1.644456</td>
+    </tr>
+    <tr>
+      <td>Jaden McDanielsMIN | SF</td>
+      <td>9.726670</td>
+      <td>4.677108</td>
+      <td>1.373177</td>
+      <td>0.795956</td>
+      <td>1.157519</td>
+    </tr>
+    <tr>
+      <td>Derrick Jones Jr.LAC | PF</td>
+      <td>9.720240</td>
+      <td>4.462229</td>
+      <td>1.190781</td>
+      <td>0.850242</td>
+      <td>1.166726</td>
+    </tr>
+    <tr>
+      <td>Isaiah JoeOKC | SG</td>
+      <td>9.687002</td>
+      <td>2.590104</td>
+      <td>1.224075</td>
+      <td>0.645554</td>
+      <td>2.002922</td>
+    </tr>
+    <tr>
+      <td>Daniel GaffordDAL | C</td>
+      <td>9.667062</td>
+      <td>8.682348</td>
+      <td>1.618687</td>
+      <td>0.652683</td>
+      <td>-0.279067</td>
+    </tr>
+    <tr>
+      <td>JaVale McGeeSAC | C</td>
+      <td>9.644315</td>
+      <td>6.321813</td>
+      <td>0.216626</td>
+      <td>0.188173</td>
+      <td>-0.278058</td>
+    </tr>
+    <tr>
+      <td>Dillon BrooksHOU | SF</td>
+      <td>9.543558</td>
+      <td>2.791776</td>
+      <td>1.304144</td>
+      <td>0.698094</td>
+      <td>1.655838</td>
+    </tr>
+    <tr>
+      <td>Landry ShametNYK | SG</td>
+      <td>9.522683</td>
+      <td>2.024374</td>
+      <td>1.478769</td>
+      <td>0.534776</td>
+      <td>1.747763</td>
+    </tr>
+    <tr>
+      <td>Ziaire WilliamsBKN | SF</td>
+      <td>9.416999</td>
+      <td>2.683562</td>
+      <td>1.392291</td>
+      <td>0.570173</td>
+      <td>1.313084</td>
+    </tr>
+    <tr>
+      <td>Jeremy SochanSAS | PF</td>
+      <td>9.401836</td>
+      <td>4.285925</td>
+      <td>2.585264</td>
+      <td>0.702887</td>
+      <td>0.714435</td>
+    </tr>
+    <tr>
+      <td>Sam HauserBOS | PF</td>
+      <td>9.370978</td>
+      <td>2.861995</td>
+      <td>0.845312</td>
+      <td>0.664043</td>
+      <td>2.080484</td>
+    </tr>
+    <tr>
+      <td>Isaiah HartensteinOKC | C</td>
+      <td>9.271182</td>
+      <td>7.812695</td>
+      <td>2.404208</td>
+      <td>0.968794</td>
+      <td>0.058526</td>
+    </tr>
+    <tr>
+      <td>Lamar StevensDET | SF</td>
+      <td>9.247682</td>
+      <td>3.722104</td>
+      <td>0.626011</td>
+      <td>0.544212</td>
+      <td>0.575015</td>
+    </tr>
+    <tr>
+      <td>Moses MoodyGSW | SG</td>
+      <td>9.226506</td>
+      <td>3.818048</td>
+      <td>0.777616</td>
+      <td>0.565165</td>
+      <td>1.202108</td>
+    </tr>
+    <tr>
+      <td>Andre DrummondPHI | C</td>
+      <td>9.168090</td>
+      <td>7.707681</td>
+      <td>0.335321</td>
+      <td>0.513844</td>
+      <td>-0.445467</td>
+    </tr>
+    <tr>
+      <td>Gordon Hayward| SF</td>
+      <td>9.149025</td>
+      <td>2.821109</td>
+      <td>2.822645</td>
+      <td>0.608286</td>
+      <td>1.174206</td>
+    </tr>
+    <tr>
+      <td>Andrew NembhardIND | PG</td>
+      <td>9.092178</td>
+      <td>3.231085</td>
+      <td>3.949943</td>
+      <td>0.782844</td>
+      <td>0.962385</td>
+    </tr>
+    <tr>
+      <td>Paul ReedDET | PF</td>
+      <td>9.058968</td>
+      <td>5.305547</td>
+      <td>1.489852</td>
+      <td>0.816961</td>
+      <td>0.265924</td>
+    </tr>
+    <tr>
+      <td>Santi AldamaMEM | PF</td>
+      <td>9.021474</td>
+      <td>5.149116</td>
+      <td>2.111344</td>
+      <td>0.791557</td>
+      <td>1.064611</td>
+    </tr>
+    <tr>
+      <td>Caleb MartinPHI | SF</td>
+      <td>8.998452</td>
+      <td>3.651229</td>
+      <td>1.823047</td>
+      <td>0.776177</td>
+      <td>1.033103</td>
+    </tr>
+    <tr>
+      <td>Kentavious Caldwell-PopeORL | SG</td>
+      <td>8.939858</td>
+      <td>2.850272</td>
+      <td>2.028527</td>
+      <td>0.860552</td>
+      <td>1.702321</td>
+    </tr>
+    <tr>
+      <td>Aaron HolidayHOU | PG</td>
+      <td>8.828170</td>
+      <td>1.868961</td>
+      <td>2.441167</td>
+      <td>0.637903</td>
+      <td>1.407022</td>
+    </tr>
+    <tr>
+      <td>Day'Ron SharpeBKN | C</td>
+      <td>8.811562</td>
+      <td>5.645999</td>
+      <td>1.537168</td>
+      <td>0.590414</td>
+      <td>-0.024927</td>
+    </tr>
+    <tr>
+      <td>Jakob PoeltlTOR | C</td>
+      <td>8.742236</td>
+      <td>7.686933</td>
+      <td>2.039961</td>
+      <td>0.678989</td>
+      <td>-0.314847</td>
+    </tr>
+    <tr>
+      <td>Mo BambaLAC | C</td>
+      <td>8.719314</td>
+      <td>5.929600</td>
+      <td>1.299228</td>
+      <td>0.598216</td>
+      <td>0.691314</td>
+    </tr>
+    <tr>
+      <td>Clint CapelaATL | C</td>
+      <td>8.624782</td>
+      <td>7.534536</td>
+      <td>1.249856</td>
+      <td>0.699893</td>
+      <td>-0.349711</td>
+    </tr>
+    <tr>
+      <td>Sam MerrillCLE | SG</td>
+      <td>8.615500</td>
+      <td>1.466182</td>
+      <td>2.111083</td>
+      <td>0.530007</td>
+      <td>2.180718</td>
+    </tr>
+    <tr>
+      <td>Davis Bertans| PF</td>
+      <td>8.606682</td>
+      <td>2.489262</td>
+      <td>0.922039</td>
+      <td>0.460518</td>
+      <td>2.067795</td>
+    </tr>
+    <tr>
+      <td>Anthony GillWAS | PF</td>
+      <td>8.598327</td>
+      <td>4.158375</td>
+      <td>1.547220</td>
+      <td>0.626137</td>
+      <td>0.498605</td>
+    </tr>
+    <tr>
+      <td>Georges NiangCLE | PF</td>
+      <td>8.566535</td>
+      <td>2.309306</td>
+      <td>0.850913</td>
+      <td>0.421081</td>
+      <td>1.665084</td>
+    </tr>
+    <tr>
+      <td>Nick RichardsCHA | C</td>
+      <td>8.539506</td>
+      <td>5.262874</td>
+      <td>0.870070</td>
+      <td>0.425757</td>
+      <td>0.259491</td>
+    </tr>
+    <tr>
+      <td>Saben LeePHX | PG</td>
+      <td>8.412074</td>
+      <td>2.930253</td>
+      <td>3.167493</td>
+      <td>0.838217</td>
+      <td>0.919739</td>
+    </tr>
+    <tr>
+      <td>Keon EllisSAC | SG</td>
+      <td>8.401208</td>
+      <td>3.331484</td>
+      <td>1.967074</td>
+      <td>0.861501</td>
+      <td>1.873894</td>
+    </tr>
+    <tr>
+      <td>Malachi FlynnSAS | PG</td>
+      <td>8.399577</td>
+      <td>0.682897</td>
+      <td>2.828880</td>
+      <td>0.610107</td>
+      <td>1.250218</td>
+    </tr>
+    <tr>
+      <td>Aaron WigginsOKC | SG</td>
+      <td>8.394447</td>
+      <td>3.375089</td>
+      <td>1.196472</td>
+      <td>0.478517</td>
+      <td>0.974752</td>
+    </tr>
+    <tr>
+      <td>Terance MannLAC | SF</td>
+      <td>8.393983</td>
+      <td>3.862811</td>
+      <td>1.654708</td>
+      <td>0.738205</td>
+      <td>1.215008</td>
+    </tr>
+    <tr>
+      <td>Onyeka OkongwuATL | C</td>
+      <td>8.382937</td>
+      <td>6.188901</td>
+      <td>1.727061</td>
+      <td>0.690173</td>
+      <td>0.087220</td>
+    </tr>
+    <tr>
+      <td>Christian WoodLAL | PF</td>
+      <td>8.308639</td>
+      <td>3.253873</td>
+      <td>0.770470</td>
+      <td>0.514074</td>
+      <td>0.908322</td>
+    </tr>
+    <tr>
+      <td>Kenneth Lofton Jr.CHI | C</td>
+      <td>8.308509</td>
+      <td>4.355366</td>
+      <td>3.512608</td>
+      <td>0.435745</td>
+      <td>0.484830</td>
+    </tr>
+    <tr>
+      <td>Malik BeasleyDET | SG</td>
+      <td>8.270515</td>
+      <td>1.700982</td>
+      <td>0.851962</td>
+      <td>0.680595</td>
+      <td>2.101166</td>
+    </tr>
+    <tr>
+      <td>Dennis Smith Jr.| PG</td>
+      <td>8.189488</td>
+      <td>2.485108</td>
+      <td>4.232764</td>
+      <td>0.975328</td>
+      <td>0.606945</td>
+    </tr>
+    <tr>
+      <td>Gary Payton IIGSW | SG</td>
+      <td>8.186396</td>
+      <td>4.845667</td>
+      <td>1.655359</td>
+      <td>0.884804</td>
+      <td>0.687289</td>
+    </tr>
+    <tr>
+      <td>Patrick WilliamsCHI | SF</td>
+      <td>8.062132</td>
+      <td>2.808840</td>
+      <td>0.903070</td>
+      <td>0.609003</td>
+      <td>1.214868</td>
+    </tr>
+    <tr>
+      <td>Josh RichardsonMIA | SF</td>
+      <td>8.055184</td>
+      <td>3.507542</td>
+      <td>2.042312</td>
+      <td>0.526612</td>
+      <td>1.171038</td>
+    </tr>
+    <tr>
+      <td>Kyle LowryPHI | PG</td>
+      <td>8.053523</td>
+      <td>2.155266</td>
+      <td>3.637699</td>
+      <td>0.868919</td>
+      <td>1.941895</td>
+    </tr>
+    <tr>
+      <td>Devonte' GrahamPOR | PG</td>
+      <td>8.038570</td>
+      <td>1.408166</td>
+      <td>3.308898</td>
+      <td>0.692556</td>
+      <td>1.672232</td>
+    </tr>
+    <tr>
+      <td>Seth CurryCHA | SG</td>
+      <td>7.993422</td>
+      <td>1.869696</td>
+      <td>1.265136</td>
+      <td>0.661506</td>
+      <td>1.659632</td>
+    </tr>
+    <tr>
+      <td>Dante ExumDAL | SG</td>
+      <td>7.959124</td>
+      <td>1.999407</td>
+      <td>3.355046</td>
+      <td>0.479449</td>
+      <td>1.446235</td>
+    </tr>
+    <tr>
+      <td>Omer Yurtseven| C</td>
+      <td>7.884532</td>
+      <td>4.912491</td>
+      <td>0.930355</td>
+      <td>0.524146</td>
+      <td>0.126863</td>
+    </tr>
+    <tr>
+      <td>Grant WilliamsCHA | PF</td>
+      <td>7.842357</td>
+      <td>3.468370</td>
+      <td>1.805882</td>
+      <td>0.538376</td>
+      <td>1.520283</td>
+    </tr>
+    <tr>
+      <td>Malaki BranhamSAS | SG</td>
+      <td>7.795769</td>
+      <td>1.895744</td>
+      <td>1.805900</td>
+      <td>0.324870</td>
+      <td>0.993748</td>
+    </tr>
+    <tr>
+      <td>Josh HartNYK | SF</td>
+      <td>7.736990</td>
+      <td>4.264682</td>
+      <td>2.936329</td>
+      <td>1.035704</td>
+      <td>0.839686</td>
+    </tr>
+    <tr>
+      <td>Jabari WalkerPOR | PF</td>
+      <td>7.689070</td>
+      <td>4.226678</td>
+      <td>1.112458</td>
+      <td>0.670195</td>
+      <td>0.662510</td>
+    </tr>
+    <tr>
+      <td>Isaiah StewartDET | C</td>
+      <td>7.686241</td>
+      <td>3.975358</td>
+      <td>1.093653</td>
+      <td>0.542803</td>
+      <td>0.951793</td>
+    </tr>
+    <tr>
+      <td>Delon WrightMIL | PG</td>
+      <td>7.607665</td>
+      <td>3.706541</td>
+      <td>3.734837</td>
+      <td>1.100739</td>
+      <td>1.059677</td>
+    </tr>
+    <tr>
+      <td>Orlando RobinsonSAC | C</td>
+      <td>7.500926</td>
+      <td>3.962840</td>
+      <td>2.516191</td>
+      <td>0.524668</td>
+      <td>0.875340</td>
+    </tr>
+    <tr>
+      <td>Patrick BeverleyMIL | PG</td>
+      <td>7.470836</td>
+      <td>3.480152</td>
+      <td>3.330245</td>
+      <td>0.799011</td>
+      <td>1.195725</td>
+    </tr>
+    <tr>
+      <td>Cody MartinCHA | SF</td>
+      <td>7.468718</td>
+      <td>3.890962</td>
+      <td>3.161057</td>
+      <td>0.912654</td>
+      <td>0.867268</td>
+    </tr>
+    <tr>
+      <td>Evan Fournier| SG</td>
+      <td>7.351066</td>
+      <td>2.487389</td>
+      <td>1.467874</td>
+      <td>0.596902</td>
+      <td>1.175985</td>
+    </tr>
+    <tr>
+      <td>Sandro MamukelashviliSAS | PF</td>
+      <td>7.311400</td>
+      <td>5.106122</td>
+      <td>2.282412</td>
+      <td>0.551162</td>
+      <td>0.535607</td>
+    </tr>
+    <tr>
+      <td>Isaac OkoroCLE | SF</td>
+      <td>7.277726</td>
+      <td>3.257959</td>
+      <td>1.612094</td>
+      <td>0.736258</td>
+      <td>1.210365</td>
+    </tr>
+    <tr>
+      <td>Jock LandaleHOU | C</td>
+      <td>7.274530</td>
+      <td>5.519806</td>
+      <td>1.829894</td>
+      <td>0.704113</td>
+      <td>0.208380</td>
+    </tr>
+    <tr>
+      <td>Dorian Finney-SmithBKN | SF</td>
+      <td>7.240739</td>
+      <td>3.617844</td>
+      <td>1.367967</td>
+      <td>0.809927</td>
+      <td>1.309302</td>
+    </tr>
+    <tr>
+      <td>Bol BolPHX | C</td>
+      <td>7.237973</td>
+      <td>4.542583</td>
+      <td>-0.039301</td>
+      <td>0.187014</td>
+      <td>0.334022</td>
+    </tr>
+    <tr>
+      <td>Luke KornetBOS | C</td>
+      <td>7.192511</td>
+      <td>5.878955</td>
+      <td>1.435931</td>
+      <td>0.664648</td>
+      <td>-0.229535</td>
+    </tr>
+    <tr>
+      <td>Goga BitadzeORL | C</td>
+      <td>7.167106</td>
+      <td>6.987286</td>
+      <td>1.525023</td>
+      <td>0.719092</td>
+      <td>0.051430</td>
+    </tr>
+    <tr>
+      <td>Richaun HolmesWAS | C</td>
+      <td>7.154910</td>
+      <td>4.593253</td>
+      <td>0.897590</td>
+      <td>0.556770</td>
+      <td>0.245967</td>
+    </tr>
+    <tr>
+      <td>Julian ChampagnieSAS | SF</td>
+      <td>7.116119</td>
+      <td>3.122069</td>
+      <td>1.374450</td>
+      <td>0.641537</td>
+      <td>1.694956</td>
+    </tr>
+    <tr>
+      <td>Eric GordonPHI | SG</td>
+      <td>7.096705</td>
+      <td>1.877650</td>
+      <td>1.168397</td>
+      <td>0.480610</td>
+      <td>1.393883</td>
+    </tr>
+    <tr>
+      <td>Jevon CarterCHI | PG</td>
+      <td>7.078756</td>
+      <td>1.051668</td>
+      <td>1.867955</td>
+      <td>0.724936</td>
+      <td>1.634019</td>
+    </tr>
+    <tr>
+      <td>Spencer DinwiddieDAL | PG</td>
+      <td>6.996559</td>
+      <td>1.446344</td>
+      <td>3.662846</td>
+      <td>0.627297</td>
+      <td>1.371639</td>
+    </tr>
+    <tr>
+      <td>Naji MarshallDAL | SF</td>
+      <td>6.976996</td>
+      <td>3.395499</td>
+      <td>1.932712</td>
+      <td>0.508342</td>
+      <td>0.852622</td>
+    </tr>
+    <tr>
+      <td>Al HorfordBOS | C</td>
+      <td>6.889464</td>
+      <td>5.171620</td>
+      <td>2.126380</td>
+      <td>0.704711</td>
+      <td>0.904160</td>
+    </tr>
+    <tr>
+      <td>Jaxson HayesLAL | C</td>
+      <td>6.860149</td>
+      <td>5.954964</td>
+      <td>0.729675</td>
+      <td>0.320465</td>
+      <td>0.032866</td>
+    </tr>
+    <tr>
+      <td>Monte MorrisPHX | PG</td>
+      <td>6.858390</td>
+      <td>2.605995</td>
+      <td>3.123795</td>
+      <td>0.901089</td>
+      <td>1.252893</td>
+    </tr>
+    <tr>
+      <td>Drew EubanksUTA | C</td>
+      <td>6.834319</td>
+      <td>3.480278</td>
+      <td>0.862080</td>
+      <td>0.673667</td>
+      <td>-0.018440</td>
+    </tr>
+    <tr>
+      <td>Quentin GrimesDAL | SG</td>
+      <td>6.806984</td>
+      <td>2.433159</td>
+      <td>1.307973</td>
+      <td>0.691729</td>
+      <td>1.547466</td>
+    </tr>
+    <tr>
+      <td>Jalen McDanielsSAC | PF</td>
+      <td>6.806034</td>
+      <td>2.270746</td>
+      <td>1.340609</td>
+      <td>0.576678</td>
+      <td>0.796499</td>
+    </tr>
+    <tr>
+      <td>Jordan McLaughlinSAC | PG</td>
+      <td>6.730682</td>
+      <td>2.648767</td>
+      <td>3.997939</td>
+      <td>0.897255</td>
+      <td>1.420755</td>
+    </tr>
+    <tr>
+      <td>Svi MykhailiukUTA | SG</td>
+      <td>6.703715</td>
+      <td>1.201161</td>
+      <td>1.661548</td>
+      <td>0.553602</td>
+      <td>1.937108</td>
+    </tr>
+    <tr>
+      <td>Bruce BrownTOR | SG</td>
+      <td>6.667864</td>
+      <td>2.795211</td>
+      <td>2.085312</td>
+      <td>0.496043</td>
+      <td>0.679223</td>
+    </tr>
+    <tr>
+      <td>Neemias QuetaBOS | C</td>
+      <td>6.618111</td>
+      <td>6.403198</td>
+      <td>0.654304</td>
+      <td>0.263360</td>
+      <td>-0.340142</td>
+    </tr>
+    <tr>
+      <td>Bruno FernandoTOR | C</td>
+      <td>6.608815</td>
+      <td>4.997393</td>
+      <td>0.939027</td>
+      <td>0.335704</td>
+      <td>0.013001</td>
+    </tr>
+    <tr>
+      <td>Markelle Fultz| PG</td>
+      <td>6.603504</td>
+      <td>4.686045</td>
+      <td>2.185718</td>
+      <td>0.702056</td>
+      <td>-0.229753</td>
+    </tr>
+    <tr>
+      <td>Nickeil Alexander-WalkerMIN | SG</td>
+      <td>6.486340</td>
+      <td>2.568235</td>
+      <td>1.923749</td>
+      <td>0.643554</td>
+      <td>1.199953</td>
+    </tr>
+    <tr>
+      <td>Mason PlumleePHX | C</td>
+      <td>6.432562</td>
+      <td>6.036564</td>
+      <td>1.572105</td>
+      <td>0.592814</td>
+      <td>-0.089845</td>
+    </tr>
+    <tr>
+      <td>Damian Jones| C</td>
+      <td>6.359545</td>
+      <td>5.213637</td>
+      <td>0.734125</td>
+      <td>0.306638</td>
+      <td>-0.055652</td>
+    </tr>
+    <tr>
+      <td>Kris DunnLAC | PG</td>
+      <td>6.357555</td>
+      <td>3.362951</td>
+      <td>4.533970</td>
+      <td>0.863615</td>
+      <td>0.525537</td>
+    </tr>
+    <tr>
+      <td>James WisemanIND | C</td>
+      <td>6.187101</td>
+      <td>4.879383</td>
+      <td>0.546624</td>
+      <td>0.153444</td>
+      <td>-0.069361</td>
+    </tr>
+    <tr>
+      <td>Larry Nance Jr.ATL | C</td>
+      <td>6.158038</td>
+      <td>5.127377</td>
+      <td>1.904920</td>
+      <td>0.714134</td>
+      <td>0.292361</td>
+    </tr>
+    <tr>
+      <td>Jeremiah Robinson-EarlNOP | PF</td>
+      <td>6.128410</td>
+      <td>2.572973</td>
+      <td>0.764099</td>
+      <td>0.547658</td>
+      <td>0.805374</td>
+    </tr>
+    <tr>
+      <td>Christian BraunDEN | SF</td>
+      <td>6.071482</td>
+      <td>2.739712</td>
+      <td>1.588227</td>
+      <td>0.630544</td>
+      <td>0.903447</td>
+    </tr>
+    <tr>
+      <td>Zeke NnajiDEN | PF</td>
+      <td>6.055442</td>
+      <td>3.618747</td>
+      <td>0.873571</td>
+      <td>0.519445</td>
+      <td>0.554866</td>
+    </tr>
+    <tr>
+      <td>Shake MiltonBKN | SG</td>
+      <td>6.040988</td>
+      <td>2.958642</td>
+      <td>1.679848</td>
+      <td>0.336548</td>
+      <td>0.737569</td>
+    </tr>
+    <tr>
+      <td>Trey LylesSAC | PF</td>
+      <td>5.985438</td>
+      <td>2.806342</td>
+      <td>1.070186</td>
+      <td>0.506075</td>
+      <td>1.309781</td>
+    </tr>
+    <tr>
+      <td>Aleksej Pokusevski| PF</td>
+      <td>5.962579</td>
+      <td>2.978222</td>
+      <td>1.246453</td>
+      <td>0.461865</td>
+      <td>0.747370</td>
+    </tr>
+    <tr>
+      <td>Ousmane DiengOKC | SF</td>
+      <td>5.902277</td>
+      <td>2.532043</td>
+      <td>1.627761</td>
+      <td>0.432750</td>
+      <td>0.742427</td>
+    </tr>
+    <tr>
+      <td>Patrick Baldwin Jr.WAS | PF</td>
+      <td>5.862358</td>
+      <td>2.851174</td>
+      <td>1.043398</td>
+      <td>0.570382</td>
+      <td>0.986805</td>
+    </tr>
+    <tr>
+      <td>Jaden SpringerBOS | SG</td>
+      <td>5.857061</td>
+      <td>2.892507</td>
+      <td>1.281605</td>
+      <td>0.675059</td>
+      <td>0.491442</td>
+    </tr>
+    <tr>
+      <td>Troy Brown Jr.| SF</td>
+      <td>5.750003</td>
+      <td>2.784889</td>
+      <td>1.214552</td>
+      <td>0.664230</td>
+      <td>1.092649</td>
+    </tr>
+    <tr>
+      <td>Josh OkogiePHX | SF</td>
+      <td>5.732412</td>
+      <td>3.400009</td>
+      <td>1.103977</td>
+      <td>0.761518</td>
+      <td>0.969145</td>
+    </tr>
+    <tr>
+      <td>Walker KesslerUTA | C</td>
+      <td>5.724984</td>
+      <td>6.521464</td>
+      <td>0.671376</td>
+      <td>0.573964</td>
+      <td>-0.535071</td>
+    </tr>
+    <tr>
+      <td>Robert Covington| PF</td>
+      <td>5.707502</td>
+      <td>5.171603</td>
+      <td>0.774208</td>
+      <td>0.776951</td>
+      <td>1.069172</td>
+    </tr>
+    <tr>
+      <td>Marcus Morris Sr.| PF</td>
+      <td>5.694476</td>
+      <td>1.931851</td>
+      <td>0.445586</td>
+      <td>0.319853</td>
+      <td>1.123160</td>
+    </tr>
+    <tr>
+      <td>Patty MillsUTA | PG</td>
+      <td>5.669474</td>
+      <td>1.860998</td>
+      <td>1.339166</td>
+      <td>0.676617</td>
+      <td>1.203703</td>
+    </tr>
+    <tr>
+      <td>Josh GreenCHA | SG</td>
+      <td>5.650513</td>
+      <td>2.566911</td>
+      <td>1.701431</td>
+      <td>0.594451</td>
+      <td>1.097404</td>
+    </tr>
+    <tr>
+      <td>AJ Griffin| SF</td>
+      <td>5.646883</td>
+      <td>2.067939</td>
+      <td>0.505320</td>
+      <td>0.626951</td>
+      <td>0.621252</td>
+    </tr>
+    <tr>
+      <td>Cedi Osman| SF</td>
+      <td>5.610786</td>
+      <td>2.625319</td>
+      <td>1.858596</td>
+      <td>0.387580</td>
+      <td>1.123431</td>
+    </tr>
+    <tr>
+      <td>Kenrich WilliamsOKC | SF</td>
+      <td>5.546225</td>
+      <td>3.419852</td>
+      <td>1.849933</td>
+      <td>0.784521</td>
+      <td>1.150273</td>
+    </tr>
+    <tr>
+      <td>John KoncharMEM | SF</td>
+      <td>5.546093</td>
+      <td>4.181362</td>
+      <td>1.997418</td>
+      <td>1.022911</td>
+      <td>0.955307</td>
+    </tr>
+    <tr>
+      <td>Xavier TillmanBOS | PF</td>
+      <td>5.522453</td>
+      <td>4.913689</td>
+      <td>1.511588</td>
+      <td>0.885563</td>
+      <td>0.195208</td>
+    </tr>
+    <tr>
+      <td>Dwight PowellDAL | C</td>
+      <td>5.457159</td>
+      <td>5.495931</td>
+      <td>2.207476</td>
+      <td>0.593490</td>
+      <td>0.143839</td>
+    </tr>
+    <tr>
+      <td>Jaylin WilliamsOKC | C</td>
+      <td>5.340455</td>
+      <td>4.142590</td>
+      <td>2.251851</td>
+      <td>0.611494</td>
+      <td>1.045001</td>
+    </tr>
+    <tr>
+      <td>Gary HarrisORL | SG</td>
+      <td>5.339251</td>
+      <td>1.976987</td>
+      <td>1.207423</td>
+      <td>0.728175</td>
+      <td>1.474781</td>
+    </tr>
+    <tr>
+      <td>Markieff MorrisDAL | C</td>
+      <td>5.280394</td>
+      <td>2.033865</td>
+      <td>1.059587</td>
+      <td>0.487677</td>
+      <td>1.016161</td>
+    </tr>
+    <tr>
+      <td>Moses BrownPOR | C</td>
+      <td>5.234089</td>
+      <td>5.624418</td>
+      <td>0.695377</td>
+      <td>0.387650</td>
+      <td>-0.273779</td>
+    </tr>
+    <tr>
+      <td>Davion MitchellTOR | PG</td>
+      <td>5.205368</td>
+      <td>0.840286</td>
+      <td>2.471520</td>
+      <td>0.620926</td>
+      <td>0.904297</td>
+    </tr>
+    <tr>
+      <td>Kyle AndersonGSW | PF</td>
+      <td>5.185154</td>
+      <td>5.594431</td>
+      <td>3.476929</td>
+      <td>0.783374</td>
+      <td>-0.200304</td>
+    </tr>
+    <tr>
+      <td>Peyton WatsonDEN | SF</td>
+      <td>4.945444</td>
+      <td>4.053418</td>
+      <td>0.862315</td>
+      <td>0.520273</td>
+      <td>0.159923</td>
+    </tr>
+    <tr>
+      <td>Royce O'NealePHX | SF</td>
+      <td>4.914617</td>
+      <td>2.262344</td>
+      <td>1.974049</td>
+      <td>0.642434</td>
+      <td>1.390354</td>
+    </tr>
+    <tr>
+      <td>Jeff GreenHOU | PF</td>
+      <td>4.892835</td>
+      <td>3.054793</td>
+      <td>0.671348</td>
+      <td>0.246511</td>
+      <td>0.812986</td>
+    </tr>
+    <tr>
+      <td>Precious AchiuwaNYK | PF</td>
+      <td>4.809389</td>
+      <td>4.954557</td>
+      <td>0.950650</td>
+      <td>0.578824</td>
+      <td>-0.193584</td>
+    </tr>
+    <tr>
+      <td>Chris DuarteCHI | SG</td>
+      <td>4.753402</td>
+      <td>1.412393</td>
+      <td>0.702434</td>
+      <td>0.549909</td>
+      <td>1.296642</td>
+    </tr>
+    <tr>
+      <td>Kira Lewis Jr.WAS | PG</td>
+      <td>4.746358</td>
+      <td>2.400934</td>
+      <td>2.496382</td>
+      <td>0.619677</td>
+      <td>0.164372</td>
+    </tr>
+    <tr>
+      <td>Nassir LittleMIA | SF</td>
+      <td>4.725854</td>
+      <td>3.148002</td>
+      <td>0.555780</td>
+      <td>0.399218</td>
+      <td>0.599169</td>
+    </tr>
+    <tr>
+      <td>Jarred VanderbiltLAL | PF</td>
+      <td>4.650000</td>
+      <td>4.552245</td>
+      <td>0.969406</td>
+      <td>0.719962</td>
+      <td>0.106427</td>
+    </tr>
+    <tr>
+      <td>Matisse ThybullePOR | SF</td>
+      <td>4.635119</td>
+      <td>3.969245</td>
+      <td>1.078308</td>
+      <td>0.901458</td>
+      <td>0.899825</td>
+    </tr>
+    <tr>
+      <td>Dean WadeCLE | PF</td>
+      <td>4.536007</td>
+      <td>2.969269</td>
+      <td>0.457523</td>
+      <td>0.678371</td>
+      <td>1.651947</td>
+    </tr>
+    <tr>
+      <td>Joe InglesMIN | SF</td>
+      <td>4.420286</td>
+      <td>1.685018</td>
+      <td>3.583716</td>
+      <td>0.466293</td>
+      <td>1.473070</td>
+    </tr>
+    <tr>
+      <td>David RoddyATL | PF</td>
+      <td>4.285841</td>
+      <td>2.588730</td>
+      <td>0.876219</td>
+      <td>0.393264</td>
+      <td>0.275012</td>
+    </tr>
+    <tr>
+      <td>Dominick BarlowATL | PF</td>
+      <td>4.273365</td>
+      <td>3.912158</td>
+      <td>1.407477</td>
+      <td>0.529831</td>
+      <td>-0.083066</td>
+    </tr>
+    <tr>
+      <td>Dyson DanielsATL | SG</td>
+      <td>4.225200</td>
+      <td>4.743755</td>
+      <td>2.255791</td>
+      <td>0.845824</td>
+      <td>0.279118</td>
+    </tr>
+    <tr>
+      <td>Mike Muscala| C</td>
+      <td>4.189972</td>
+      <td>2.344300</td>
+      <td>0.896763</td>
+      <td>0.577933</td>
+      <td>1.182130</td>
+    </tr>
+    <tr>
+      <td>MarJon BeauchampMIL | SG</td>
+      <td>4.052101</td>
+      <td>1.817874</td>
+      <td>0.282420</td>
+      <td>0.277433</td>
+      <td>0.709869</td>
+    </tr>
+    <tr>
+      <td>Oshae BrissettBOS | PF</td>
+      <td>4.036167</td>
+      <td>3.023532</td>
+      <td>0.955172</td>
+      <td>0.543854</td>
+      <td>0.709305</td>
+    </tr>
+    <tr>
+      <td>Taurean PrinceMIL | SF</td>
+      <td>4.020445</td>
+      <td>1.804508</td>
+      <td>0.443429</td>
+      <td>0.324869</td>
+      <td>1.253924</td>
+    </tr>
+    <tr>
+      <td>Bryce McGowensPOR | SG</td>
+      <td>3.941415</td>
+      <td>0.998372</td>
+      <td>0.760360</td>
+      <td>0.351032</td>
+      <td>0.915871</td>
+    </tr>
+    <tr>
+      <td>Cam ReddishLAL | SF</td>
+      <td>3.786084</td>
+      <td>2.106488</td>
+      <td>0.286476</td>
+      <td>0.578755</td>
+      <td>0.914278</td>
+    </tr>
+    <tr>
+      <td>Doug McDermottIND | SF</td>
+      <td>3.683223</td>
+      <td>-0.394278</td>
+      <td>0.950265</td>
+      <td>0.190359</td>
+      <td>1.786610</td>
+    </tr>
+    <tr>
+      <td>Chuma Okeke| PF</td>
+      <td>3.628043</td>
+      <td>2.324864</td>
+      <td>0.327172</td>
+      <td>0.653626</td>
+      <td>1.104308</td>
+    </tr>
+    <tr>
+      <td>Keita Bates-DiopNYK | PF</td>
+      <td>3.611713</td>
+      <td>3.590326</td>
+      <td>0.658360</td>
+      <td>0.548361</td>
+      <td>0.277797</td>
+    </tr>
+    <tr>
+      <td>Amir CoffeyLAC | SF</td>
+      <td>3.458472</td>
+      <td>1.805385</td>
+      <td>0.486356</td>
+      <td>0.342619</td>
+      <td>1.181928</td>
+    </tr>
+    <tr>
+      <td>Jae'Sean TateHOU | PF</td>
+      <td>3.363782</td>
+      <td>3.371941</td>
+      <td>0.942399</td>
+      <td>0.706125</td>
+      <td>0.427743</td>
+    </tr>
+    <tr>
+      <td>Nicolas BatumLAC | SF</td>
+      <td>3.304487</td>
+      <td>3.119355</td>
+      <td>1.542461</td>
+      <td>0.599264</td>
+      <td>1.236408</td>
+    </tr>
+    <tr>
+      <td>Ochai AgbajiTOR | SG</td>
+      <td>3.293862</td>
+      <td>3.174399</td>
+      <td>0.792313</td>
+      <td>0.632485</td>
+      <td>0.395289</td>
+    </tr>
+    <tr>
+      <td>Haywood HighsmithMIA | SF</td>
+      <td>3.205044</td>
+      <td>2.789523</td>
+      <td>0.481408</td>
+      <td>0.489725</td>
+      <td>0.866656</td>
+    </tr>
+    <tr>
+      <td>DeAndre JordanDEN | C</td>
+      <td>3.199564</td>
+      <td>6.832737</td>
+      <td>0.861616</td>
+      <td>0.208631</td>
+      <td>-1.059563</td>
+    </tr>
+    <tr>
+      <td>Kevon LooneyGSW | C</td>
+      <td>3.172561</td>
+      <td>6.500529</td>
+      <td>1.962080</td>
+      <td>0.565700</td>
+      <td>-0.712846</td>
+    </tr>
+    <tr>
+      <td>Jae CrowderMIL | PF</td>
+      <td>3.064515</td>
+      <td>2.731823</td>
+      <td>0.807532</td>
+      <td>0.554495</td>
+      <td>1.046282</td>
+    </tr>
+    <tr>
+      <td>Caleb HoustanORL | SG</td>
+      <td>2.990833</td>
+      <td>0.751868</td>
+      <td>-0.057659</td>
+      <td>0.375382</td>
+      <td>1.466243</td>
+    </tr>
+    <tr>
+      <td>Kessler EdwardsDAL | SF</td>
+      <td>2.868176</td>
+      <td>1.999736</td>
+      <td>0.376781</td>
+      <td>0.392503</td>
+      <td>1.214131</td>
+    </tr>
+    <tr>
+      <td>Dalen TerryCHI | SG</td>
+      <td>2.848735</td>
+      <td>3.913369</td>
+      <td>2.279581</td>
+      <td>0.693216</td>
+      <td>-0.063138</td>
+    </tr>
+    <tr>
+      <td>Pat ConnaughtonMIL | SG</td>
+      <td>2.631213</td>
+      <td>1.846751</td>
+      <td>1.431221</td>
+      <td>0.535183</td>
+      <td>1.054771</td>
+    </tr>
+    <tr>
+      <td>Max ChristieLAL | SG</td>
+      <td>2.199459</td>
+      <td>0.909898</td>
+      <td>0.249143</td>
+      <td>0.363870</td>
+      <td>0.690266</td>
+    </tr>
+    <tr>
+      <td>Wesley MatthewsATL | SG</td>
+      <td>2.082134</td>
+      <td>0.881227</td>
+      <td>0.490734</td>
+      <td>0.510531</td>
+      <td>1.228759</td>
+    </tr>
+    <tr>
+      <td>Alex LenSAC | C</td>
+      <td>2.038367</td>
+      <td>4.649483</td>
+      <td>1.239540</td>
+      <td>0.363708</td>
+      <td>-0.689838</td>
+    </tr>
+    <tr>
+      <td>Blake WesleySAS | PG</td>
+      <td>1.619008</td>
+      <td>1.833503</td>
+      <td>3.241498</td>
+      <td>0.419763</td>
+      <td>-0.332014</td>
+    </tr>
+    <tr>
+      <td>Yuta WatanabeMEM | SF</td>
+      <td>1.341121</td>
+      <td>1.183697</td>
+      <td>0.052051</td>
+      <td>0.473795</td>
+      <td>0.779424</td>
+    </tr>
+    <tr>
+      <td>Maxi KleberDAL | C</td>
+      <td>1.209412</td>
+      <td>2.490403</td>
+      <td>0.868950</td>
+      <td>0.468950</td>
+      <td>1.005783</td>
+    </tr>
+    <tr>
+      <td>Justin HolidayDEN | SG</td>
+      <td>1.122625</td>
+      <td>1.669743</td>
+      <td>1.041052</td>
+      <td>0.269480</td>
+      <td>0.958218</td>
+    </tr>
+    <tr>
+      <td>JT ThorCLE | PF</td>
+      <td>0.594044</td>
+      <td>2.093184</td>
+      <td>0.101710</td>
+      <td>0.381142</td>
+      <td>0.181114</td>
+    </tr>
+    <tr>
+      <td>Johnny DavisWAS | SG</td>
+      <td>0.461345</td>
+      <td>1.477217</td>
+      <td>0.484447</td>
+      <td>0.516937</td>
+      <td>0.279018</td>
+    </tr>
+    <tr>
+      <td>Trent ForrestATL | PG</td>
+      <td>-0.173059</td>
+      <td>1.212976</td>
+      <td>3.626478</td>
+      <td>0.642435</td>
+      <td>-0.255343</td>
+    </tr>
+    <tr>
+      <td>P.J. TuckerLAC | PF</td>
+      <td>-1.824950</td>
+      <td>2.071615</td>
+      <td>0.070117</td>
+      <td>0.547628</td>
+      <td>0.398825</td>
+    </tr>
+  </tbody>
+</table>
+        </table>
+    </body>
+    </html>
+    
