@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ player.Name }} - NBA Player Stats</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+        }
+        .stats {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>{{ player.Name }} - Projected Stats</h1>
+        <div class="stats">
+            <h3>Projected Stats:</h3>
+            <p><strong>Points Per Game (PPG):</strong> {{ player.Prediction['Points'] }}</p>
+            <p><strong>Rebounds:</strong> {{ player.Prediction['Rebounds'] }}</p>
+            <p><strong>Assists:</strong> {{ player.Prediction['Assists'] }}</p>
+            <p><strong>Steals:</strong> {{ player.Prediction['Steals'] }}</p>
+            <p><strong>3P%:</strong> {{ player.Prediction['3P%'] }}</p>
+
+            <h3>Percentiles (Relative to Other Players):</h3>
+            <ul>
+                {% for feature, percentile in player.Percentiles.items() %}
+                    <li><strong>{{ feature }}:</strong> {{ percentile }}%</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <a href="/">Search Another Player</a>
+    </div>
+</body>
+</html>
