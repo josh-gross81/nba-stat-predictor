@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ player.Name }} - NBA Player Stats</title>
+    <title>NBA Player Stats</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -32,22 +32,8 @@
     </style>
 </head>
 <body>
-    <h1>{{ player.Name }} - Projected Stats</h1>
-    <div class="stats">
-        <h3>Projected Stats:</h3>
-        <p><strong>Points Per Game (PPG):</strong> {{ player.Prediction['Points'] }}</p>
-        <p><strong>Rebounds:</strong> {{ player.Prediction['Rebounds'] }}</p>
-        <p><strong>Assists:</strong> {{ player.Prediction['Assists'] }}</p>
-        <p><strong>Steals:</strong> {{ player.Prediction['Steals'] }}</p>
-        <p><strong>3P%:</strong> {{ player.Prediction['3P%'] }}</p>
-
-        <h3>Percentiles (Relative to Other Players):</h3>
-        <ul>
-            {% for feature, percentile in player.Percentiles.items() %}
-                <li><strong>{{ feature }}:</strong> {{ percentile }}%</li>
-            {% endfor %}
-        </ul>
-    </div>
-    <a href="{{ url_for('home') }}">Search Another Player</a>  <!-- Link back to lookup page -->
+    <h1>Player Stats for {{ player_name }}</h1>
+    <p>This is a placeholder for the player's stats.</p>
+    <a href="lookup.html">Search Another Player</a>  <!-- Link back to lookup.html -->
 </body>
 </html>
